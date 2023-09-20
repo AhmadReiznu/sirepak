@@ -8,7 +8,7 @@
 
 @section('body')
 
-    <body data-layout="horizontal" data-topbar="colored">
+<body data-layout="horizontal" data-topbar="colored">
     @show
 
     <!-- Begin page -->

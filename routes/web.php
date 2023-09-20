@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Tabel1Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,10 +18,26 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'root']);
+Route::get('/logic-testing', [Tabel1Controller::class, 'index']);
+Route::get('/logic-testing/create', [Tabel1Controller::class, 'create']);
+Route::post('/logic-testing', [Tabel1Controller::class, 'store']);
 
-Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index']);
-//Language Translation
+Route::get('/', function () {
+    return redirect('/login');
+});
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
+});
+
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+});
+
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'root']);
+
+// Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index']);
+// //Language Translation
 
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
 
