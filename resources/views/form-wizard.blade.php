@@ -5,15 +5,15 @@
 
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Forms @endslot
-@slot('title') Form wizard @endslot
+@slot('pagetitle') Tambah Data @endslot
+@slot('title') Kerjasama Pendidikan @endslot
 @endcomponent
 
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Basic Wizard</h4>
+                <h4 class="card-title mb-4">Tambah Data Kerjasama Pendidikan</h4>
 
                 <div id="basic-example">
                     <!-- Seller Details -->

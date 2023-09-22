@@ -44,7 +44,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-search-dropdown">
-                    
+
                     <form class="p-3">
                         <div class="m-0">
                             <div class="input-group">
@@ -182,15 +182,15 @@
                 </div>
             </div>
 
-            
-            
+
+
         </div>
     </div>
     <div class="container-fluid">
         <div class="topnav">
 
             <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-    
+
                 <div class="collapse navbar-collapse" id="topnav-menu-content">
                     <ul class="navbar-nav">
 
@@ -199,28 +199,104 @@
                                 <i class="uil-home-alt me-2"></i> @lang('translation.Dashboard')
                             </a>
                         </li>
-    
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="kerjasama" role="button"
                                >
-                                <i class="uil-layers me-2"></i>Tabel 1 <div class="arrow-down"></div>
+                                <i class="uil-layers me-2"></i>Kerjasama <div class="arrow-down"></div>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="topnav-components">
+                            <div class="dropdown-menu" aria-labelledby="kerjasama">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-table"
-                                        role="button">
-                                        Tabel <div class="arrow-down"></div>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Kerjasama Pendidikan
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="topnav-table">
-                                        <a href="tables-basic" class="dropdown-item">@lang('translation.Bootstrap_Basic')</a>
-                                        <a href="tables-datatable" class="dropdown-item">@lang('translation.Datatables')</a>
-                                        <a href="tables-responsive" class="dropdown-item">@lang('translation.Responsive')</a>
-                                        <a href="tables-editable" class="dropdown-item">@lang('translation.Editable')</a>
-                                    </div>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Kerjasama Penelitian
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Kerjasama Pengabdian Kepada Masyarakat
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="mahasiswa" role="button"
+                               >
+                                <i class="uil-layers me-2"></i>Mahasiswa <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="mahasiswa">
+                                <div class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Seleksi Mahasiswa
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Mahasiswa Asing
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="dosen" role="button"
+                               >
+                                <i class="uil-layers me-2"></i>Dosen <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dosen">
+                                <div class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Dosen Tetap Perguruan Tinggi
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Dosen Pembimbing Utama Tugas Akhir
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Dosen Tidak Tetap
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Dosen Industri/Praktisi
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Pengakuan/Rekognisi Dosen
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Penilitian DTPS
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        PkM DTPS
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Publikasi Ilmiah DTPS
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Karya Ilmiah DTPS yang Disitasi
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
+                                    </a>
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                        Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter
+                                    </a>
                                 </div>
                             </div>
                         </li>
                     </ul>
+
                 </div>
             </nav>
         </div>
