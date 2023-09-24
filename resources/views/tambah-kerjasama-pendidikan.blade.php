@@ -1,12 +1,12 @@
-@extends('layouts.master')
+@extends('layouts.master-layouts')
 @section('title')
-@lang('translation.Basic_Elements')
+Kerjasama Pendidikan
 @endsection
 
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Forms @endslot
-@slot('title') Basic Elements @endslot
+@slot('pagetitle') Tambah Data @endslot
+@slot('title') Kerjasama Pendidikan @endslot
 @endcomponent
 
 <div class="row">
@@ -14,110 +14,68 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="card-title">Textual inputs</h4>
-                <p class="card-title-desc">Here are examples of <code>.form-control</code> applied to each
-                    textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
+                <h4 class="card-title">Tambah Data Kerjasama Pendidikan</h4>
 
-                <div class="mb-3 row">
-                    <label for="example-text-input" class="col-md-2 col-form-label">Text</label>
+                <div class="mb-3 mt-3 row">
+                    <label for="lembaga" class="col-md-2 col-form-label">Lembaga</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+                        <input class="form-control" type="text" name="lembaga" id="lembaga">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="example-search-input" class="col-md-2 col-form-label">Search</label>
+                    <label for="example-search-input" class="col-md-2 col-form-label">Tingkat</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tingkat" id="internasional" checked>
+                            <label class="form-check-label" for="internasional">
+                                Internasional
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tingkat" id="nasional">
+                            <label class="form-check-label" for="nasional">
+                                Nasional
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tingkat" id="wilayah_lokal">
+                            <label class="form-check-label" for="wilayah_lokal">
+                                Wilayah/Lokal
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
+                    <label for="judul_kegiatan" class="col-md-2 col-form-label">Judul Kegiatan Kerjasama</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                        <input class="form-control" type="text" name="judul_kegiatan" id="judul_kegiatan">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="example-url-input" class="col-md-2 col-form-label">URL</label>
+                    <label for="manfaat_ps" class="col-md-2 col-form-label">Manfaat bagi PS yang Diakreditasi</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
+                        <input class="form-control" type="text" name="manfaat_ps" id="manfaat_ps">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="example-tel-input" class="col-md-2 col-form-label">Telephone</label>
+                    <label for="waktu_durasi" class="col-md-2 col-form-label">Waktu & Durasi</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+                        <div class="input-group">
+                            <input type="number" class="form-control" name="waktu_durasi" id="waktu_durasi">
+                            <div class="input-group-text">Tahun</div>
+                        </div>
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="example-password-input" class="col-md-2 col-form-label">Password</label>
+                    <label for="bukti_kerjasama" class="col-md-2 col-form-label">Bukti Kerjasama</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                        <input class="form-control" type="file" name="bukti_kerjasama" id="bukti_kerjasama">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="example-number-input" class="col-md-2 col-form-label">Number</label>
+                    <label for="tahun_akhir_kerjasama" class="col-md-2 col-form-label">Tahun Berakhirnya Kerjasama</label>
                     <div class="col-md-10">
-                        <input class="form-control" type="number" value="42" id="example-number-input">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-datetime-local-input" class="col-md-2 col-form-label">Date and time</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="datetime-local" value="2019-08-19T13:45:00" id="example-datetime-local-input">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-date-input" class="col-md-2 col-form-label">Date</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-month-input" class="col-md-2 col-form-label">Month</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="month" value="2019-08" id="example-month-input">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-week-input" class="col-md-2 col-form-label">Week</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="week" value="2019-W33" id="example-week-input">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-time-input" class="col-md-2 col-form-label">Time</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-color-input" class="col-md-2 col-form-label">Color picker</label>
-                    <div class="col-md-10">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#5b73e8" title="Choose your color">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label class="col-md-2 col-form-label">Select</label>
-                    <div class="col-md-10">
-                        <select class="form-select">
-                            <option>Select</option>
-                            <option>Large select</option>
-                            <option>Small select</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <label for="exampleDataList" class="col-md-2 col-form-label">Datalists</label>
-                    <div class="col-md-10">
-                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-                        <datalist id="datalistOptions">
-                            <option value="San Francisco">
-                            <option value="New York">
-                            <option value="Seattle">
-                            <option value="Los Angeles">
-                            <option value="Chicago">
-                        </datalist>
+                        <input class="form-control" type="date" name="tahun_akhir_kerjasama" id="tahun_akhir_kerjasama">
                     </div>
                 </div>
             </div>
@@ -126,7 +84,7 @@
 </div>
 <!-- end row -->
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
@@ -306,11 +264,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- End Form Layout -->
 
 <!-- Start Form Sizing -->
-<div class="row">
+{{-- <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
@@ -337,10 +295,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- End Form Sizing -->
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-xl-6">
         <div class="card">
             <div class="card-body">
@@ -453,10 +411,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- end row -->
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
@@ -511,7 +469,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- end row -->
 
 @endsection
