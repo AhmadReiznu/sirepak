@@ -1,3 +1,4 @@
+<h1>Test</h1>
 <a href="{{ url('/logic-testing/create') }}">Add</a>
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
