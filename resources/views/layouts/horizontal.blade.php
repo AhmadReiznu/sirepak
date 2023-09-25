@@ -244,54 +244,60 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dosen">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Dosen Tetap Perguruan Tinggi
+                                    <a href="#" class="dropdown-item dropdown-toggle arrow-none" id="topnav-dosen" role="button" target="_top">
+                                        Data Dosen
+                                        <div class="arrow-down"></div>
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Dosen Pembimbing Utama Tugas Akhir
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Dosen Tidak Tetap
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Dosen Industri/Praktisi
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Pengakuan/Rekognisi Dosen
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Penilitian DTPS
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        PkM DTPS
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Publikasi Ilmiah DTPS
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Karya Ilmiah DTPS yang Disitasi
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
-                                    </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
-                                        Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter
-                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="topnav-dosen">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Dosen Tetap Perguruan Tinggi
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Dosen Pembimbing Utama Tugas Akhir
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Dosen Tidak Tetap
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Dosen Industri/Praktisi
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Pengakuan/Rekognisi Dosen
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Penilitian DTPS
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            PkM DTPS
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Publikasi Ilmiah DTPS
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Karya Ilmiah DTPS yang Disitasi
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
+                                        </a>
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="tabel-kerjasama" id="topnav-table" role="button">
+                                            Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
