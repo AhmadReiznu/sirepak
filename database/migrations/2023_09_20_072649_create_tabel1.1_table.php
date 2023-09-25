@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tabel1.1', function (Blueprint $table) {
+        Schema::create('tabel_1_1', function (Blueprint $table) {
             $table->id();
             $table->string('lembaga_mitra');
             $table->enum('tingkat', ['internasional', 'nasional', 'lokal']);

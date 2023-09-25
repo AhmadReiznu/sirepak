@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tabel11 extends Model
+class Tabel_1_1 extends Model
 {
     use HasFactory;
 
-    protected $table = 'tabel1-1';
+    protected $table = 'tabel_1_1';
 
     protected $fillable = [
         'lembaga_mitra',
