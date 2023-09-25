@@ -12,73 +12,63 @@ Kerjasama Pendidikan
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-body">
+            <form action="{{ url('kerjasama-pendidikan') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                    <h4 class="card-title">Tambah Data Kerjasama Pendidikan</h4>
 
-                <h4 class="card-title">Tambah Data Kerjasama Pendidikan</h4>
-
-                <div class="mb-3 mt-3 row">
-                    <label for="lembaga" class="col-md-2 col-form-label">Lembaga</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" name="lembaga" id="lembaga">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="example-search-input" class="col-md-2 col-form-label">Tingkat</label>
-                    <div class="col-md-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tingkat" id="internasional" checked>
-                            <label class="form-check-label" for="internasional">
-                                Internasional
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tingkat" id="nasional">
-                            <label class="form-check-label" for="nasional">
-                                Nasional
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tingkat" id="wilayah_lokal">
-                            <label class="form-check-label" for="wilayah_lokal">
-                                Wilayah/Lokal
-                            </label>
+                    <div class="mb-3 mt-3 row">
+                        <label for="lembaga" class="col-md-2 col-form-label">Lembaga</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="lembaga_mitra" id="lembaga">
                         </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="judul_kegiatan" class="col-md-2 col-form-label">Judul Kegiatan Kerjasama</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" name="judul_kegiatan" id="judul_kegiatan">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="manfaat_ps" class="col-md-2 col-form-label">Manfaat bagi PS yang Diakreditasi</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="text" name="manfaat_ps" id="manfaat_ps">
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="waktu_durasi" class="col-md-2 col-form-label">Waktu & Durasi</label>
-                    <div class="col-md-10">
-                        <div class="input-group">
-                            <input type="number" class="form-control" name="waktu_durasi" id="waktu_durasi">
-                            <div class="input-group-text">Tahun</div>
+                    <div class="mb-3 row">
+                        <label for="example-search-input" class="col-md-2 col-form-label">Tingkat</label>
+                        <div class="col-md-10">
+                            <select name="tingkat" class="form-select">
+                                <option value="lokal">Lokal</option>
+                                <option value="nasional">Nasional</option>
+                                <option value="internasional">Internasional</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="bukti_kerjasama" class="col-md-2 col-form-label">Bukti Kerjasama</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="file" name="bukti_kerjasama" id="bukti_kerjasama">
+                    <div class="mb-3 row">
+                        <label for="judul_kegiatan" class="col-md-2 col-form-label">Judul Kegiatan Kerjasama</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="judul_kegiatan_kerjasama" id="judul_kegiatan">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="tahun_akhir_kerjasama" class="col-md-2 col-form-label">Tahun Berakhirnya Kerjasama</label>
-                    <div class="col-md-10">
-                        <input class="form-control" type="date" name="tahun_akhir_kerjasama" id="tahun_akhir_kerjasama">
+                    <div class="mb-3 row">
+                        <label for="manfaat_ps" class="col-md-2 col-form-label">Manfaat bagi PS yang Diakreditasi</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" name="manfaat_bagi_ps_yang_diakreditasi" id="manfaat_ps">
+                        </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label for="waktu_durasi" class="col-md-2 col-form-label">Waktu & Durasi</label>
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="waktu_dan_durasi" id="waktu_durasi">
+                                <div class="input-group-text">Tahun</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="bukti_kerjasama" class="col-md-2 col-form-label">Bukti Kerjasama</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="file" name="bukti_kerjasama" id="bukti_kerjasama">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="tahun_akhir_kerjasama" class="col-md-2 col-form-label">Tahun Berakhirnya Kerjasama</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="date" name="tahun_berakhirnya_kerjasama" id="tahun_akhir_kerjasama">
+                        </div>
+                    </div>
+                    <button type="submit">Tambah</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div> <!-- end col -->
 </div>

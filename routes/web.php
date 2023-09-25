@@ -30,6 +30,8 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
     Route::get('kerjasama-pendidikan', [KerjasamaPendidikan::class, 'index']);
+    Route::get('tambah-kerjasama-pendidikan', [KerjasamaPendidikan::class, 'create']);
+    Route::post('kerjasama-pendidikan', [KerjasamaPendidikan::class, 'store']);
 });
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {

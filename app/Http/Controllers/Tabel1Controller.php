@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tabel11;
+use App\Models\Tabel_1_1;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -11,7 +11,7 @@ class Tabel1Controller extends Controller
 {
     public function index()
     {
-        $tabels11 = Tabel11::all();
+        $tabels11 = Tabel_1_1::all();
         return view('logic-test.index', compact('tabels11'));
     }
 
@@ -40,7 +40,7 @@ class Tabel1Controller extends Controller
             return redirect()->back()->withErrors($validator);
         } else {
             // store
-            $tabel11 = new Tabel11;
+            $tabel11 = new Tabel_1_1;
             $tabel11->lembaga_mitra = $request->lembaga_mitra;
             $tabel11->tingkat = $request->tingkat;
             $tabel11->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
