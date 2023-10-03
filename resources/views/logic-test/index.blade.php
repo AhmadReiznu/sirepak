@@ -11,6 +11,7 @@
             <th rowspan="2">Waktu dan Durasi</th>
             <th rowspan="2">Bukti Kerjasama</th>
             <th rowspan="2">Tahun Berakhirnya Kerjasama (YYYY)</th>
+            <th rowspan="2">Action</th>
         </tr>
         <tr>
             <th>Interna-sional</th>
@@ -29,8 +30,12 @@
             <td>{{ $tabel->judul_kegiatan_kerjasama }}</td>
             <td>{{ $tabel->manfaat_bagi_ps_yang_diakreditasi }}</td>
             <td>{{ $tabel->waktu_dan_durasi }}</td>
-            <td>{{ $tabel->bukti_kerjasama }}</td>
+            <td><a href="{{ asset('dokumen/'.$tabel->bukti_kerjasama) }}">{{ $tabel->bukti_kerjasama }}</a></td>
             <td>{{ $tabel->tahun_berakhirnya_kerjasama }}</td>
+            <td>
+                <a href="{{ url('/logic-testing/edit/'.$tabel->id) }}">Edit</a>
+                <a href="{{ url('/logic-testing/delete/'.$tabel->id) }}">Hapus</a>
+            </td>
         </tr>
         @endforeach
     </tbody>
