@@ -16,6 +16,7 @@ class Tabel_3_A_3 extends Model
         'dtps',
         'ewmp_pendidikan_ps_yang_diakreditasi',
         'ewmp_pendidikan_ps_lain_di_dalam_pt',
+        'ewmp_pendidikan_ps_lain_di_luar_pt',
         'ewmp_penelitian',
         'ewmp_pkm',
         'ewmp_tugas_tambahan',

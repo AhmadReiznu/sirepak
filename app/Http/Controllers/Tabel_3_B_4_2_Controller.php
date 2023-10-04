@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tabel_3_B_4_2;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class Tabel_3_B_4_2_Controller extends Controller
 {
@@ -27,7 +30,36 @@ class Tabel_3_B_4_2_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $rules = [
+            'jenis_publikasi' => 'required',
+            'jumlah_judul_ts_2' => 'required|integer',
+            'jumlah_judul_ts_1' => 'required|integer',
+            'jumlah_judul_ts' => 'required|integer',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            // dd($validator);
+            return redirect()->back()->withErrors($validator);
+        } else {
+            // store
+            $tabel_3_b_4_2 = new Tabel_3_B_4_2;
+            $tabel_3_b_4_2->jenis_publikasi = $request->jenis_publikasi;
+            $tabel_3_b_4_2->jumlah_judul_ts_2 = $request->jumlah_judul_ts_2;
+            $tabel_3_b_4_2->jumlah_judul_ts_1 = $request->jumlah_judul_ts_1;
+            $tabel_3_b_4_2->jumlah_judul_ts = $request->jumlah_judul_ts;
+            $tabel_3_b_4_2->jumlah =
+                $request->jumlah_judul_ts_2 +
+                $request->jumlah_judul_ts_1 +
+                $request->jumlah_judul_ts;
+            $tabel_3_b_4_2->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created!');
+            return redirect('/tabel-3-b-4-2');
+        }
     }
 
     /**
@@ -51,7 +83,36 @@ class Tabel_3_B_4_2_Controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($request->all());
+        $rules = [
+            'jenis_publikasi' => 'required',
+            'jumlah_judul_ts_2' => 'required|integer',
+            'jumlah_judul_ts_1' => 'required|integer',
+            'jumlah_judul_ts' => 'required|integer',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            // dd($validator);
+            return redirect()->back()->withErrors($validator);
+        } else {
+            // update
+            $tabel_3_b_4_2 = Tabel_3_B_4_2::find($id);
+            $tabel_3_b_4_2->jenis_publikasi = $request->jenis_publikasi;
+            $tabel_3_b_4_2->jumlah_judul_ts_2 = $request->jumlah_judul_ts_2;
+            $tabel_3_b_4_2->jumlah_judul_ts_1 = $request->jumlah_judul_ts_1;
+            $tabel_3_b_4_2->jumlah_judul_ts = $request->jumlah_judul_ts;
+            $tabel_3_b_4_2->jumlah =
+                $request->jumlah_judul_ts_2 +
+                $request->jumlah_judul_ts_1 +
+                $request->jumlah_judul_ts;
+            $tabel_3_b_4_2->save();
+
+            // redirect
+            Session::flash('message', 'Successfully updated!');
+            return redirect('/tabel-3-b-4-2');
+        }
     }
 
     /**
@@ -59,6 +120,11 @@ class Tabel_3_B_4_2_Controller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tabel_3_b_4_2 = Tabel_3_B_4_2::find($id);
+        $tabel_3_b_4_2->delete();
+
+        // redirect
+        Session::flash('message', 'Successfully deleted!');
+        return redirect('/tabel-3-b-4-2');
     }
 }

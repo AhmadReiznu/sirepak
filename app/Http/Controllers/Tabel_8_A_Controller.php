@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tabel_8_A;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class Tabel_8_A_Controller extends Controller
 {
@@ -27,7 +30,34 @@ class Tabel_8_A_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $rules = [
+            'tahun_lulus' => 'required',
+            'jumlah_lulusan' => 'required',
+            'ipk_min' => 'required',
+            'ipk_rata_rata' => 'required',
+            'ipk_maks' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            // dd($validator);
+            return redirect()->back()->withErrors($validator);
+        } else {
+            // store
+            $tabel_8_a = new Tabel_8_A;
+            $tabel_8_a->tahun_lulus = $request->tahun_lulus;
+            $tabel_8_a->jumlah_lulusan = $request->jumlah_lulusan;
+            $tabel_8_a->ipk_min = $request->ipk_min;
+            $tabel_8_a->ipk_rata_rata = $request->ipk_rata_rata;
+            $tabel_8_a->ipk_maks = $request->ipk_maks;
+            $tabel_8_a->save();
+
+            // redirect
+            Session::flash('message', 'Successfully created!');
+            return redirect('/tabel-8-a');
+        }
     }
 
     /**
@@ -51,7 +81,34 @@ class Tabel_8_A_Controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd($request->all());
+        $rules = [
+            'tahun_lulus' => 'required',
+            'jumlah_lulusan' => 'required',
+            'ipk_min' => 'required',
+            'ipk_rata_rata' => 'required',
+            'ipk_maks' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            // dd($validator);
+            return redirect()->back()->withErrors($validator);
+        } else {
+            // update
+            $tabel_8_a = Tabel_8_A::find($id);
+            $tabel_8_a->tahun_lulus = $request->tahun_lulus;
+            $tabel_8_a->jumlah_lulusan = $request->jumlah_lulusan;
+            $tabel_8_a->ipk_min = $request->ipk_min;
+            $tabel_8_a->ipk_rata_rata = $request->ipk_rata_rata;
+            $tabel_8_a->ipk_maks = $request->ipk_maks;
+            $tabel_8_a->save();
+
+            // redirect
+            Session::flash('message', 'Successfully updated!');
+            return redirect('/tabel-8-a');
+        }
     }
 
     /**
@@ -59,6 +116,11 @@ class Tabel_8_A_Controller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tabel_8_a = Tabel_8_A::find($id);
+        $tabel_8_a->delete();
+
+        // redirect
+        Session::flash('message', 'Successfully deleted!');
+        return redirect('/tabel-8-a');
     }
 }

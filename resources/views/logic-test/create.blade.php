@@ -9,36 +9,32 @@
     @csrf
     <table>
         <tr>
-            <td>Lembaga</td>
-            <td><input type="text" name="lembaga_mitra"></td>
+            <td>jenis_penggunaan</td>
+            <td><input type="text" name="jenis_penggunaan"></td>
         </tr>
         <tr>
-            <td>Tingkat</td>
-            <td><select name="tingkat">
-                    <option value="lokal">Lokal</option>
-                    <option value="nasional">Nasional</option>
-                    <option value="internasional">Internasional</option>
-                </select></td>
+            <td>unit_pengelola_program_studi_ts_2</td>
+            <td><input type="number" name="unit_pengelola_program_studi_ts_2"></td>
         </tr>
         <tr>
-            <td>Judul</td>
-            <td><input type="text" name="judul_kegiatan_kerjasama"></td>
+            <td>unit_pengelola_program_studi_ts_1</td>
+            <td><input type="number" step="0.01" name="unit_pengelola_program_studi_ts_1"></td>
         </tr>
         <tr>
-            <td>Manfaat</td>
-            <td><input type="text" name="manfaat_bagi_ps_yang_diakreditasi"></td>
+            <td>unit_pengelola_program_studi_ts</td>
+            <td><input type="number" name="unit_pengelola_program_studi_ts"></td>
         </tr>
         <tr>
-            <td>Waktu</td>
-            <td><input type="text" name="waktu_dan_durasi"></td>
+            <td>program_studi_ts_2</td>
+            <td><input type="number" name="program_studi_ts_2"></td>
         </tr>
         <tr>
-            <td>Bukti</td>
-            <td><input type="file" name="bukti_kerjasama"></td>
+            <td>program_studi_ts_1</td>
+            <td><input type="number" name="program_studi_ts_1"></td>
         </tr>
         <tr>
-            <td>Tahun</td>
-            <td><input type="text" name="tahun_berakhirnya_kerjasama"></td>
+            <td>program_studi_ts</td>
+            <td><input type="number" name="program_studi_ts"></td>
         </tr>
         <tr>
             <td><button type="submit">Tambahkan</button></td>

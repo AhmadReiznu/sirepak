@@ -3,38 +3,33 @@
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
         <tr>
-            <th rowspan="2">No.</th>
-            <th rowspan="2">Lembaga Mitra</th>
-            <th colspan="3">Tingkat *</th>
-            <th rowspan="2">Judul Kegiatan Kerjasama</th>
-            <th rowspan="2">Manfaat bagi PS yang Diakreditasi</th>
-            <th rowspan="2">Waktu dan Durasi</th>
-            <th rowspan="2">Bukti Kerjasama</th>
-            <th rowspan="2">Tahun Berakhirnya Kerjasama (YYYY)</th>
-            <th rowspan="2">Action</th>
-        </tr>
-        <tr>
-            <th>Interna-sional</th>
-            <th>Nasional</th>
-            <th>Wilayah/ Lokal</th>
+            <th>jenis_penggunaan</th>
+            <th>unit_pengelola_program_studi_ts_2</th>
+            <th>unit_pengelola_program_studi_ts_1</th>
+            <th>unit_pengelola_program_studi_ts</th>
+            <th>rata_rata_1</th>
+            <th>program_studi_ts_2</th>
+            <th>program_studi_ts_1</th>
+            <th>program_studi_ts</th>
+            <th>rata_rata_2</th>
+            <th>action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($tabels11 as $tabel)
+        @foreach ($tabel_4s as $tabel_4)
         <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $tabel->lembaga_mitra }}</td>
-            <td>{{ $tabel->tingkat == 'internasional' ? 'X' : '' }}</td>
-            <td>{{ $tabel->tingkat == 'nasional' ? 'X' : '' }}</td>
-            <td>{{ $tabel->tingkat == 'lokal' ? 'X' : '' }}</td>
-            <td>{{ $tabel->judul_kegiatan_kerjasama }}</td>
-            <td>{{ $tabel->manfaat_bagi_ps_yang_diakreditasi }}</td>
-            <td>{{ $tabel->waktu_dan_durasi }}</td>
-            <td><a href="{{ asset('dokumen/'.$tabel->bukti_kerjasama) }}">{{ $tabel->bukti_kerjasama }}</a></td>
-            <td>{{ $tabel->tahun_berakhirnya_kerjasama }}</td>
+            <td>{{ $tabel_4->jenis_penggunaan }}</td>
+            <td>{{ $tabel_4->unit_pengelola_program_studi_ts_2 }}</td>
+            <td>{{ $tabel_4->unit_pengelola_program_studi_ts_1 }}</td>
+            <td>{{ $tabel_4->unit_pengelola_program_studi_ts }}</td>
+            <td>{{ $tabel_4->rata_rata_1 }}</td>
+            <td>{{ $tabel_4->program_studi_ts_2 }}</td>
+            <td>{{ $tabel_4->program_studi_ts_1 }}</td>
+            <td>{{ $tabel_4->program_studi_ts }}</td>
+            <td>{{ $tabel_4->rata_rata_2 }}</td>
             <td>
-                <a href="{{ url('/logic-testing/edit/'.$tabel->id) }}">Edit</a>
-                <a href="{{ url('/logic-testing/delete/'.$tabel->id) }}">Hapus</a>
+                <a href="{{ url('/logic-testing/edit/'.$tabel_4->id) }}">edit</a>
+                <a href="{{ url('/logic-testing/delete/'.$tabel_4->id) }}">delete</a>
             </td>
         </tr>
         @endforeach

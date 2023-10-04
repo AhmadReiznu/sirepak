@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('tabel_4', function (Blueprint $table) {
             $table->id();
             $table->string('jenis_penggunaan');
-            $table->decimal('unit_pengelola_program_studi_ts_2', 18, 2);
-            $table->decimal('unit_pengelola_program_studi_ts_1', 18, 2);
-            $table->decimal('unit_pengelola_program_studi_ts', 18, 2);
-            $table->decimal('rata_rata_1', 18, 2);
-            $table->decimal('program_studi_ts_2', 18, 2);
-            $table->decimal('program_studi_ts_1', 18, 2);
-            $table->decimal('program_studi_ts', 18, 2);
-            $table->decimal('rata_rata_2', 18, 2);
+            $table->decimal('unit_pengelola_program_studi_ts_2', 18);
+            $table->decimal('unit_pengelola_program_studi_ts_1', 18);
+            $table->decimal('unit_pengelola_program_studi_ts', 18);
+            $table->decimal('rata_rata_1', 18);
+            $table->decimal('program_studi_ts_2', 18);
+            $table->decimal('program_studi_ts_1', 18);
+            $table->decimal('program_studi_ts', 18);
+            $table->decimal('rata_rata_2', 18);
             $table->timestamps();
         });
     }
