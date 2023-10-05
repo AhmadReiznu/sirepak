@@ -3,38 +3,22 @@
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
         <tr>
-            <th rowspan="2">No.</th>
-            <th rowspan="2">Lembaga Mitra</th>
-            <th colspan="3">Tingkat *</th>
-            <th rowspan="2">Judul Kegiatan Kerjasama</th>
-            <th rowspan="2">Manfaat bagi PS yang Diakreditasi</th>
-            <th rowspan="2">Waktu dan Durasi</th>
-            <th rowspan="2">Bukti Kerjasama</th>
-            <th rowspan="2">Tahun Berakhirnya Kerjasama (YYYY)</th>
-            <th rowspan="2">Action</th>
-        </tr>
-        <tr>
-            <th>Interna-sional</th>
-            <th>Nasional</th>
-            <th>Wilayah/ Lokal</th>
+            <th>name</th>
+            <th>email</th>
+            <th>role</th>
+            <th>password</th>
+            <th>action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($tabels11 as $tabel)
+        @foreach ($users as $user)
         <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $tabel->lembaga_mitra }}</td>
-            <td>{{ $tabel->tingkat == 'internasional' ? 'X' : '' }}</td>
-            <td>{{ $tabel->tingkat == 'nasional' ? 'X' : '' }}</td>
-            <td>{{ $tabel->tingkat == 'lokal' ? 'X' : '' }}</td>
-            <td>{{ $tabel->judul_kegiatan_kerjasama }}</td>
-            <td>{{ $tabel->manfaat_bagi_ps_yang_diakreditasi }}</td>
-            <td>{{ $tabel->waktu_dan_durasi }}</td>
-            <td><a href="{{ asset('dokumen/'.$tabel->bukti_kerjasama) }}">{{ $tabel->bukti_kerjasama }}</a></td>
-            <td>{{ $tabel->tahun_berakhirnya_kerjasama }}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->role == 1 ? 'Admin':'User'}}</td>
+            <td>{{$user->password}}</td>
             <td>
-                <a href="{{ url('/logic-testing/edit/'.$tabel->id) }}">Edit</a>
-                <a href="{{ url('/logic-testing/delete/'.$tabel->id) }}">Hapus</a>
+                <a href="{{ url('/logic-testing/delete/'.$user->id) }}">delete</a>
             </td>
         </tr>
         @endforeach

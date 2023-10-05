@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('nama_dosen');
             $table->string('nidn');
-            $table->string('pendidikan_pasca_parjana');
-            $table->string('bidang_keahlian');
-            $table->string('jabatan_akademik');
-            $table->string('sertifikat_pendidik_profesional');
-            $table->string('sertifikat_kompetensi');
-            $table->string('mata_kuliah_yang_diampu_pada_ps_yang_diakreditasi');
-            $table->tinyInteger('kesesuaian_bidang_keahlian_dengan_mata_kuliah_yang_diampu');
+            $table->string('pendidikan_pasca_parjana')->nullable();
+            $table->string('bidang_keahlian')->nullable();
+            $table->string('jabatan_akademik')->nullable();
+            $table->string('sertifikat_pendidik_profesional')->nullable();
+            $table->string('sertifikat_kompetensi')->nullable();
+            $table->string('mata_kuliah_yang_diampu_pada_ps_yang_diakreditasi')->nullable();
+            $table->tinyInteger('kesesuaian_bidang_keahlian_dengan_mata_kuliah_yang_diampu')->nullable();
             $table->timestamps();
         });
     }

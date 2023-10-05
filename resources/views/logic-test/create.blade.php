@@ -9,36 +9,20 @@
     @csrf
     <table>
         <tr>
-            <td>Lembaga</td>
-            <td><input type="text" name="lembaga_mitra"></td>
+            <td>name</td>
+            <td><input type="text" name="name"></td>
         </tr>
         <tr>
-            <td>Tingkat</td>
-            <td><select name="tingkat">
-                    <option value="lokal">Lokal</option>
-                    <option value="nasional">Nasional</option>
-                    <option value="internasional">Internasional</option>
-                </select></td>
+            <td>email</td>
+            <td><input type="email" name="email"></td>
         </tr>
         <tr>
-            <td>Judul</td>
-            <td><input type="text" name="judul_kegiatan_kerjasama"></td>
+            <td>password</td>
+            <td><input type="password" step="0.01" name="password"></td>
         </tr>
         <tr>
-            <td>Manfaat</td>
-            <td><input type="text" name="manfaat_bagi_ps_yang_diakreditasi"></td>
-        </tr>
-        <tr>
-            <td>Waktu</td>
-            <td><input type="text" name="waktu_dan_durasi"></td>
-        </tr>
-        <tr>
-            <td>Bukti</td>
-            <td><input type="file" name="bukti_kerjasama"></td>
-        </tr>
-        <tr>
-            <td>Tahun</td>
-            <td><input type="text" name="tahun_berakhirnya_kerjasama"></td>
+            <td>password_confirmation</td>
+            <td><input type="password" name="password_confirmation"></td>
         </tr>
         <tr>
             <td><button type="submit">Tambahkan</button></td>

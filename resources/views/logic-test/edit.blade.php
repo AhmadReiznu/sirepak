@@ -5,45 +5,40 @@
     @endforeach
 </ul>
 @endif
-<form action="{{ url('/logic-testing/'. $tabel_1_1->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/logic-testing/'.$tabel_4->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method("PUT")
     <table>
         <tr>
-            <td>Lembaga</td>
-            <td><input type="text" name="lembaga_mitra" value="{{ $tabel_1_1->lembaga_mitra }}"></td>
+            <td>jenis_penggunaan</td>
+            <td><input type="text" name="jenis_penggunaan" value="{{ $tabel_4->jenis_penggunaan }}"></td>
         </tr>
         <tr>
-            <td>Tingkat</td>
-            <td><select name="tingkat">
-                    <option value="lokal">Lokal</option>
-                    <option value="nasional">Nasional</option>
-                    <option value="internasional">Internasional</option>
-                </select></td>
+            <td>unit_pengelola_program_studi_ts_2</td>
+            <td><input type="number" name="unit_pengelola_program_studi_ts_2" value="{{ $tabel_4->unit_pengelola_program_studi_ts_2 }}"></td>
         </tr>
         <tr>
-            <td>Judul</td>
-            <td><input type="text" name="judul_kegiatan_kerjasama" value="{{ $tabel_1_1->judul_kegiatan_kerjasama }}"></td>
+            <td>unit_pengelola_program_studi_ts_1</td>
+            <td><input type="number" step="0.01" name="unit_pengelola_program_studi_ts_1" value="{{ $tabel_4->unit_pengelola_program_studi_ts_1 }}"></td>
         </tr>
         <tr>
-            <td>Manfaat</td>
-            <td><input type="text" name="manfaat_bagi_ps_yang_diakreditasi" value="{{ $tabel_1_1->manfaat_bagi_ps_yang_diakreditasi }}"></td>
+            <td>unit_pengelola_program_studi_ts</td>
+            <td><input type="number" name="unit_pengelola_program_studi_ts" value="{{ $tabel_4->unit_pengelola_program_studi_ts }}"></td>
         </tr>
         <tr>
-            <td>Waktu</td>
-            <td><input type="text" name="waktu_dan_durasi" value="{{ $tabel_1_1->waktu_dan_durasi }}"></td>
+            <td>program_studi_ts_2</td>
+            <td><input type="number" name="program_studi_ts_2" value="{{ $tabel_4->program_studi_ts_2 }}"></td>
         </tr>
         <tr>
-            <td>Bukti</td>
-            <td><input type="file" name="bukti_kerjasama"></td>
-            <input type="hidden" name="current_document" value="{{ $tabel_1_1->bukti_kerjasama }}">
+            <td>program_studi_ts_1</td>
+            <td><input type="number" name="program_studi_ts_1" value="{{ $tabel_4->program_studi_ts_1 }}"></td>
         </tr>
         <tr>
-            <td>Tahun</td>
-            <td><input type="text" name="tahun_berakhirnya_kerjasama" value="{{ $tabel_1_1->tahun_berakhirnya_kerjasama }}"></td>
+            <td>program_studi_ts</td>
+            <td><input type="number" name="program_studi_ts" value="{{ $tabel_4->program_studi_ts }}"></td>
         </tr>
         <tr>
-            <td><button type="submit">Ubah</button></td>
+            <td><button type="submit">Tambahkan</button></td>
         </tr>
     </table>
 </form>

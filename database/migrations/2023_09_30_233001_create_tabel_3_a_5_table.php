@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('tabel_3_a_5', function (Blueprint $table) {
             $table->id();
             $table->string('nama_dosen_ndustri');
-            $table->string('nidk');
+            $table->string('nidk')->nullable();
             $table->string('perusahaan');
             $table->string('pendidikan_tertinggi');
             $table->string('bidang_keahlian');
-            $table->string('sertifikat_profesi');
+            $table->string('sertifikat_profesi')->nullable();
             $table->string('mata_kuliah_yang_diampu');
             $table->integer('sks');
             $table->timestamps();
