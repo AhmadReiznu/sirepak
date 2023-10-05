@@ -14,7 +14,7 @@ Kerjasama
 @endcomponent
 
 <button class="btn btn-success mb-4">
-    <a href="{{ url('tambah-kerjasama-pendidikan') }}" class="text-white">Tambah</a>
+    <a href="{{ Route('kerjasama-pendidikan.create') }}" class="text-white">Tambah</a>
 </button>
 
 <div class="row">

@@ -17,7 +17,7 @@ class KerjasamaPendidikan extends Controller
     public function index()
     {
         $tabels11 = Tabel_1_1::all();
-        return view('tabel-kerjasama', compact('tabels11'));
+        return view('kerjasama-pendidikan.index', compact('tabels11'));
     }
 
     /**
@@ -25,7 +25,7 @@ class KerjasamaPendidikan extends Controller
      */
     public function create()
     {
-        return view('tambah-kerjasama-pendidikan');
+        return view('kerjasama-pendidikan.create');
     }
 
     /**

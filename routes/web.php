@@ -38,9 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
 
     // Tabel 1.1
-    Route::get('kerjasama-pendidikan', [KerjasamaPendidikan::class, 'index']);
-    Route::get('tambah-kerjasama-pendidikan', [KerjasamaPendidikan::class, 'create']);
-    Route::post('kerjasama-pendidikan', [KerjasamaPendidikan::class, 'store']);
+    Route::resource('kerjasama-pendidikan', KerjasamaPendidikan::class);
 
     // Tabel 1.2
     Route::get('/tabel-1-2', [Tabel_1_2_Controller::class, 'index']);

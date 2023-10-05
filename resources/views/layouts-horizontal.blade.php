@@ -4,7 +4,7 @@
 @section('title') @lang('translation.Dashboard') @endsection
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Minible @endslot
+@slot('pagetitle') SIREPAK @endslot
 @slot('title') Dashboard @endslot
 @endcomponent
 

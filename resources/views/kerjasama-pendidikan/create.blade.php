@@ -5,14 +5,17 @@ Kerjasama Pendidikan
 
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Tambah Data @endslot
-@slot('title') Kerjasama Pendidikan @endslot
+@slot('pagetitle') Kerjasama Pendidikan @endslot
+@slot('title') Tambah @endslot
 @endcomponent
 
 <div class="row">
     <div class="col-12">
+        {{-- <button class="btn btn-secondary mb-5">
+            <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Kembali</a>
+        </button> --}}
         <div class="card">
-            <form action="{{ url('kerjasama-pendidikan') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('kerjasama-pendidikan.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <h4 class="card-title">Tambah Data Kerjasama Pendidikan</h4>
@@ -66,7 +69,10 @@ Kerjasama Pendidikan
                             <input class="form-control" type="date" name="tahun_berakhirnya_kerjasama" id="tahun_akhir_kerjasama">
                         </div>
                     </div>
-                    <button type="submit">Tambah</button>
+                    <button type="submit" class="btn btn-success">Tambah</button>
+                    <button>
+                        <a href="{{ route('kerjasama-pendidikan.index') }}">Batal</a>
+                    </button>
                 </div>
             </form>
         </div>
