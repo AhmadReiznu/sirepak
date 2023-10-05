@@ -3,33 +3,22 @@
 <table border="1" cellpadding="10" cellspacing="0">
     <thead>
         <tr>
-            <th>jenis_penggunaan</th>
-            <th>unit_pengelola_program_studi_ts_2</th>
-            <th>unit_pengelola_program_studi_ts_1</th>
-            <th>unit_pengelola_program_studi_ts</th>
-            <th>rata_rata_1</th>
-            <th>program_studi_ts_2</th>
-            <th>program_studi_ts_1</th>
-            <th>program_studi_ts</th>
-            <th>rata_rata_2</th>
+            <th>name</th>
+            <th>email</th>
+            <th>role</th>
+            <th>password</th>
             <th>action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($tabel_4s as $tabel_4)
+        @foreach ($users as $user)
         <tr>
-            <td>{{ $tabel_4->jenis_penggunaan }}</td>
-            <td>{{ $tabel_4->unit_pengelola_program_studi_ts_2 }}</td>
-            <td>{{ $tabel_4->unit_pengelola_program_studi_ts_1 }}</td>
-            <td>{{ $tabel_4->unit_pengelola_program_studi_ts }}</td>
-            <td>{{ $tabel_4->rata_rata_1 }}</td>
-            <td>{{ $tabel_4->program_studi_ts_2 }}</td>
-            <td>{{ $tabel_4->program_studi_ts_1 }}</td>
-            <td>{{ $tabel_4->program_studi_ts }}</td>
-            <td>{{ $tabel_4->rata_rata_2 }}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->role == 1 ? 'Admin':'User'}}</td>
+            <td>{{$user->password}}</td>
             <td>
-                <a href="{{ url('/logic-testing/edit/'.$tabel_4->id) }}">edit</a>
-                <a href="{{ url('/logic-testing/delete/'.$tabel_4->id) }}">delete</a>
+                <a href="{{ url('/logic-testing/delete/'.$user->id) }}">delete</a>
             </td>
         </tr>
         @endforeach

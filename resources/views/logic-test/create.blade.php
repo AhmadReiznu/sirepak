@@ -9,32 +9,20 @@
     @csrf
     <table>
         <tr>
-            <td>jenis_penggunaan</td>
-            <td><input type="text" name="jenis_penggunaan"></td>
+            <td>name</td>
+            <td><input type="text" name="name"></td>
         </tr>
         <tr>
-            <td>unit_pengelola_program_studi_ts_2</td>
-            <td><input type="number" name="unit_pengelola_program_studi_ts_2"></td>
+            <td>email</td>
+            <td><input type="email" name="email"></td>
         </tr>
         <tr>
-            <td>unit_pengelola_program_studi_ts_1</td>
-            <td><input type="number" step="0.01" name="unit_pengelola_program_studi_ts_1"></td>
+            <td>password</td>
+            <td><input type="password" step="0.01" name="password"></td>
         </tr>
         <tr>
-            <td>unit_pengelola_program_studi_ts</td>
-            <td><input type="number" name="unit_pengelola_program_studi_ts"></td>
-        </tr>
-        <tr>
-            <td>program_studi_ts_2</td>
-            <td><input type="number" name="program_studi_ts_2"></td>
-        </tr>
-        <tr>
-            <td>program_studi_ts_1</td>
-            <td><input type="number" name="program_studi_ts_1"></td>
-        </tr>
-        <tr>
-            <td>program_studi_ts</td>
-            <td><input type="number" name="program_studi_ts"></td>
+            <td>password_confirmation</td>
+            <td><input type="password" name="password_confirmation"></td>
         </tr>
         <tr>
             <td><button type="submit">Tambahkan</button></td>
