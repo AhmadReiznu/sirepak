@@ -14,7 +14,7 @@ Kerjasama
 @endcomponent
 
 <button class="btn btn-success mb-4">
-    <a href="{{ Route('tabel-1-2.create') }}" class="text-white">Tambah</a>
+    <a href="{{ Route('tabel-1-3.create') }}" class="text-white">Tambah</a>
 </button>
 
 <div class="row">

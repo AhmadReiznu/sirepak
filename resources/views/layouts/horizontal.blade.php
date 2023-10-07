@@ -201,28 +201,26 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="kerjasama" role="button"
-                               >
+                            <a class="nav-link dropdown-toggle arrow-none" href="" id="kerjasama" role="button">
                                 <i class="uil-layers me-2"></i>Kerjasama <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="kerjasama">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('kerjasama-pendidikan')}}" role="button">
+                                    <a class="dropdown-item {{ request()->is('kerjasama-pendidikan') ? 'bg-primary text-white' : '' }}" href="{{ url('kerjasama-pendidikan')}}">
                                         Kerjasama Pendidikan
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('tabel-1-2')}}" role="button">
+                                    <a class="dropdown-item {{ request()->is('tabel-1-2') ? 'bg-primary text-white' : '' }}" href="{{ url('tabel-1-2')}}">
                                         Kerjasama Penelitian
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('tabel-1-3')}}" role="button">
+                                    <a class="dropdown-item {{ request()->is('tabel-1-3') ? 'bg-primary text-white' : '' }}" href="{{ url('tabel-1-3')}}">
                                         Kerjasama Pengabdian Kepada Masyarakat
                                     </a>
                                 </div>
                             </div>
                         </li>
 
-                        {{-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="mahasiswa" role="button"
-                               >
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="mahasiswa" role="button">
                                 <i class="uil-layers me-2"></i>Mahasiswa <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="mahasiswa">
@@ -300,7 +298,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li> --}}
+                        </li>
                     </ul>
 
                 </div>

@@ -1,11 +1,11 @@
 @extends('layouts.master-layouts')
 @section('title')
-Kerjasama Penelitian
+Kerjasama Pengabdian Masyarakat
 @endsection
 
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Kerjasama Penelitian @endslot
+@slot('pagetitle') Kerjasama Pengabdian Masyarakat @endslot
 @slot('title') Ubah @endslot
 @endcomponent
 
@@ -15,11 +15,11 @@ Kerjasama Penelitian
             <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Kembali</a>
         </button> --}}
         <div class="card">
-            <form action="{{ route('tabel-1-2.update', $tabel_1_2->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('tabel-1-3.update', $tabel_1_3->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
-                    <h4 class="card-title">Ubah Data Kerjasama Penelitian</h4>
+                    <h4 class="card-title">Ubah Data Kerjasama Pengabdian Masyarakat</h4>
 
                     <div class="mb-3 mt-3 row">
                         <label for="lembaga_mitra" class="col-md-2 col-form-label">Lembaga</label>
@@ -74,7 +74,7 @@ Kerjasama Penelitian
                     </div>
                     <button type="submit" class="btn btn-success">Ubah</button>
                     <button class="btn btn-danger">
-                        <a href="{{ route('tabel-1-2.index') }}" class="text-white">Batal</a>
+                        <a href="{{ route('tabel-1-3.index') }}" class="text-white">Batal</a>
                     </button>
                 </div>
             </form>

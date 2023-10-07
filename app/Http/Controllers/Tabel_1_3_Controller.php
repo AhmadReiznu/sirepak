@@ -25,7 +25,7 @@ class Tabel_1_3_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('kerjasama-pengabdian-masyarakat.create');
     }
 
     /**
