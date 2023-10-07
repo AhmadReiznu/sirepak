@@ -4,20 +4,50 @@ namespace App\Http\Controllers;
 
 use App\Models\Tabel_1_1;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-
-class KerjasamaPendidikan extends Controller
+class Tabel_1_1_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $data = Tabel_1_1::select('*');
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('internasional', function ($row) {
+                    $internasional = $row->tingkat == 'internasional' ? 'X' : '';
+                    return $internasional;
+                })
+                ->addColumn('nasional', function ($row) {
+                    $nasional = $row->tingkat == 'nasional' ? 'X' : '';
+                    return $nasional;
+                })
+                ->addColumn('lokal', function ($row) {
+                    $lokal = $row->tingkat == 'lokal' ? 'X' : '';
+                    return $lokal;
+                })
+                ->addColumn('bukti', function ($row) {
+                    $bukti = '<a href=dokumen/' . $row->bukti_kerjasama . '>Lihat/Download</a>';
+                    return $bukti;
+                })
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <a href=tabel-1-1/edit/' . $row->id . ' class="edit btn btn-success btn-sm">Edit</a>
+                    <a href=tabel-1-1/delete/' . $row->id . ' class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['internasional', 'nasional', 'lokal', 'bukti', 'action'])
+                ->make(true);
+        }
         $tabels11 = Tabel_1_1::all();
-        return view('kerjasama-pendidikan.index', compact('tabels11'));
+        return view('kerjasama-pendidikan.index');
     }
 
     /**
@@ -62,14 +92,14 @@ class KerjasamaPendidikan extends Controller
             $tabel11->tingkat = $request->tingkat;
             $tabel11->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
             $tabel11->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
-            $tabel11->waktu_dan_durasi = $request->waktu_dan_durasi;
+            $tabel11->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
             $tabel11->bukti_kerjasama = $document_name;
             $tabel11->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
             $tabel11->save();
 
             // redirect
             Session::flash('message', 'Successfully created!');
-            return redirect('kerjasama-pendidikan');
+            return redirect('tabel-1-1');
         }
     }
 
@@ -132,14 +162,14 @@ class KerjasamaPendidikan extends Controller
             $tabel_1_1->tingkat = $request->tingkat;
             $tabel_1_1->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
             $tabel_1_1->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
-            $tabel_1_1->waktu_dan_durasi = $request->waktu_dan_durasi;
+            $tabel_1_1->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
             $tabel_1_1->bukti_kerjasama = $document_name;
             $tabel_1_1->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
             $tabel_1_1->save();
 
             // redirect
             Session::flash('message', 'Successfully created!');
-            return redirect('kerjasama-pendidikan');
+            return redirect('tabel-1-1');
         }
     }
 

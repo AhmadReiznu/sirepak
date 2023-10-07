@@ -12,10 +12,10 @@ Kerjasama Pendidikan
 <div class="row">
     <div class="col-12">
         {{-- <button class="btn btn-secondary mb-5">
-            <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Kembali</a>
+            <a href="{{ url('tabel-1-1') }}" class="text-white">Kembali</a>
         </button> --}}
         <div class="card">
-            <form action="{{ route('kerjasama-pendidikan.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('tabel-1-1') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <h4 class="card-title">Tambah Data Kerjasama Pendidikan</h4>
@@ -71,7 +71,7 @@ Kerjasama Pendidikan
                     </div>
                     <button type="submit" class="btn btn-success">Tambah</button>
                     <button class="btn btn-danger">
-                        <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Batal</a>
+                        <a href="{{ url('tabel-1-1') }}" class="text-white">Batal</a>
                     </button>
                 </div>
             </form>

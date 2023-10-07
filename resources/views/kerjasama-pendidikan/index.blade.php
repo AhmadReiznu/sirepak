@@ -14,7 +14,7 @@ Kerjasama
 @endcomponent
 
 <button class="btn btn-success mb-4">
-    <a href="{{ Route('kerjasama-pendidikan.create') }}" class="text-white">Tambah</a>
+    <a href="{{ url('/tabel-1-1/create') }}" class="text-white">Tambah</a>
 </button>
 
 <div class="row">
@@ -22,9 +22,8 @@ Kerjasama
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap"
-                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                        <tbody>
+                    <table class="table table-bordered data-table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                        <thead>
                             <tr>
                                 <th rowspan="2">No</th>
                                 <th rowspan="2">Lembaga</th>
@@ -41,30 +40,10 @@ Kerjasama
                                 <th>Nasional</th>
                                 <th>Wilayah/Lokal</th>
                             </tr>
-                            @foreach ($tabels11 as $tabel)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $tabel->lembaga_mitra }}</td>
-                                <td>{{ $tabel->tingkat == 'internasional' ? 'X' : '' }}</td>
-                                <td>{{ $tabel->tingkat == 'nasional' ? 'X' : '' }}</td>
-                                <td>{{ $tabel->tingkat == 'lokal' ? 'X' : '' }}</td>
-                                <td>{{ $tabel->judul_kegiatan_kerjasama }}</td>
-                                <td>{{ $tabel->manfaat_bagi_ps_yang_diakreditasi }}</td>
-                                <td>{{ $tabel->waktu_dan_durasi }}</td>
-                                <td><a href="{{ asset('dokumen/'.$tabel->bukti_kerjasama) }}" target="_blank">Lihat/Download</a></td>
-                                <td>{{ $tabel->tahun_berakhirnya_kerjasama }}</td>
-                                <td>
-                                    <a href="{{ route('kerjasama-pendidikan.edit', $tabel->id) }}">
-                                        <span class="badge bg-info">Ubah</span>
-                                    </a>
-                                    <form action="{{ route('kerjasama-pendidikan.destroy', $tabel->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="badge bg-danger outline-0 border-0">Hapus</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
+                        </thead>
+                        <tbody>
+
+                        </tbody>
                     </table>
                 </div>
 
@@ -79,4 +58,63 @@ Kerjasama
 <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
+
+<script type="text/javascript">
+    $(function() {
+
+        var table = $('.data-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ url('/tabel-1-1') }}",
+            columns: [{
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'lembaga_mitra',
+                    name: 'lembaga_mitra'
+                },
+                {
+                    data: 'internasional',
+                    name: 'internasional'
+                },
+                {
+                    data: 'nasional',
+                    name: 'nasional'
+                },
+                {
+                    data: 'lokal',
+                    name: 'lokal'
+                },
+                {
+                    data: 'judul_kegiatan_kerjasama',
+                    name: 'judul_kegiatan_kerjasama'
+                },
+                {
+                    data: 'manfaat_bagi_ps_yang_diakreditasi',
+                    name: 'manfaat_bagi_ps_yang_diakreditasi'
+                },
+                {
+                    data: 'waktu_dan_durasi',
+                    name: 'waktu_dan_durasi'
+                },
+                {
+                    data: 'bukti',
+                    name: 'bukti'
+                },
+                {
+                    data: 'tahun_berakhirnya_kerjasama',
+                    name: 'tahun_berakhirnya_kerjasama'
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false
+                },
+            ]
+        });
+
+    });
+</script>
 @endsection
