@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tabel_1_2;
+use App\Models\Tabel_1_3;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -15,7 +16,8 @@ class Tabel_1_3_Controller extends Controller
      */
     public function index()
     {
-        //
+        $tabels13 = Tabel_1_3::all();
+        return view('kerjasama-pengabdian-masyarakat.index', compact('tabels13'));
     }
 
     /**

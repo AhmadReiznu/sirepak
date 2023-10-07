@@ -10,11 +10,11 @@ Kerjasama
 @section('content')
 @component('common-components.breadcrumb')
 @slot('pagetitle') Kerjasama @endslot
-@slot('title') Kerjasama Pendidikan @endslot
+@slot('title') Kerjasama Pengabdian Masyarakat @endslot
 @endcomponent
 
 <button class="btn btn-success mb-4">
-    <a href="{{ Route('kerjasama-pendidikan.create') }}" class="text-white">Tambah</a>
+    <a href="{{ Route('tabel-1-2.create') }}" class="text-white">Tambah</a>
 </button>
 
 <div class="row">
@@ -41,7 +41,7 @@ Kerjasama
                                 <th>Nasional</th>
                                 <th>Wilayah/Lokal</th>
                             </tr>
-                            @foreach ($tabels11 as $tabel)
+                            @foreach ($tabels13 as $tabel)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $tabel->lembaga_mitra }}</td>
@@ -54,10 +54,10 @@ Kerjasama
                                 <td><a href="{{ asset('dokumen/'.$tabel->bukti_kerjasama) }}" target="_blank">Lihat/Download</a></td>
                                 <td>{{ $tabel->tahun_berakhirnya_kerjasama }}</td>
                                 <td>
-                                    <a href="{{ route('kerjasama-pendidikan.edit', $tabel->id) }}">
+                                    <a href="{{ route('tabel-1-3.edit', $tabel->id) }}">
                                         <span class="badge bg-info">Ubah</span>
                                     </a>
-                                    <form action="{{ route('kerjasama-pendidikan.destroy', $tabel->id) }}" method="POST">
+                                    <form action="{{ route('tabel-1-3.destroy', $tabel->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="badge bg-danger outline-0 border-0">Hapus</button>

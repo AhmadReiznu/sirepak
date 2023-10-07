@@ -1,11 +1,11 @@
 @extends('layouts.master-layouts')
 @section('title')
-Kerjasama Pendidikan
+Kerjasama Penelitian
 @endsection
 
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Kerjasama Pendidikan @endslot
+@slot('pagetitle') Kerjasama Penelitian @endslot
 @slot('title') Tambah @endslot
 @endcomponent
 
@@ -15,10 +15,10 @@ Kerjasama Pendidikan
             <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Kembali</a>
         </button> --}}
         <div class="card">
-            <form action="{{ route('kerjasama-pendidikan.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('tabel-1-2.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                    <h4 class="card-title">Tambah Data Kerjasama Pendidikan</h4>
+                    <h4 class="card-title">Tambah Data Kerjasama Penelitian</h4>
 
                     <div class="mb-3 mt-3 row">
                         <label for="lembaga_mitra" class="col-md-2 col-form-label">Lembaga</label>
@@ -71,7 +71,7 @@ Kerjasama Pendidikan
                     </div>
                     <button type="submit" class="btn btn-success">Tambah</button>
                     <button class="btn btn-danger">
-                        <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Batal</a>
+                        <a href="{{ route('tabel-1-2.index') }}" class="text-white">Batal</a>
                     </button>
                 </div>
             </form>

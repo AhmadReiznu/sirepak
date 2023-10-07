@@ -15,7 +15,8 @@ class Tabel_1_2_Controller extends Controller
      */
     public function index()
     {
-        //
+        $tabels12 = Tabel_1_2::all();
+        return view('kerjasama-penelitian.index', compact('tabels12'));
     }
 
     /**
@@ -23,7 +24,7 @@ class Tabel_1_2_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('kerjasama-penelitian.create');
     }
 
     /**
@@ -84,7 +85,8 @@ class Tabel_1_2_Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tabel_1_2 = Tabel_1_2::find($id);
+        return view('kerjasama-penelitian.edit', compact('tabel_1_2'));
     }
 
     /**

@@ -38,8 +38,8 @@ class KerjasamaPendidikan extends Controller
             'lembaga_mitra' => 'required',
             'tingkat' => 'required',
             'judul_kegiatan_kerjasama' => 'required',
-            'manfaat_bagi_ps_yang_diakreditasi' => 'required',
             'waktu_dan_durasi' => 'required',
+            'manfaat_bagi_ps_yang_diakreditasi' => 'required',
             'bukti_kerjasama' => 'required|mimes:doc,docx,pdf,xls,xlsx,ppt,pptx',
             'tahun_berakhirnya_kerjasama' => 'required',
         ];
@@ -87,7 +87,7 @@ class KerjasamaPendidikan extends Controller
     public function edit(string $id)
     {
         $tabel_1_1 = Tabel_1_1::find($id);
-        return view('logic-test.edit', compact('tabel_1_1'));
+        return view('kerjasama-pendidikan.edit', compact('tabel_1_1'));
     }
 
     /**

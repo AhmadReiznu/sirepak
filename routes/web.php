@@ -48,6 +48,7 @@ use App\Http\Controllers\Tabel_8_F_4_3_Controller;
 use App\Http\Controllers\Tabel_8_F_4_4_Controller;
 use App\Http\Controllers\Tabel_Ref_8_E_2_Controller;
 use App\Http\Controllers\UserController;
+use App\Models\Tabel_1_2;
 use App\Models\Tabel_3_A_3;
 
 /*
@@ -90,20 +91,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('kerjasama-pendidikan', KerjasamaPendidikan::class);
 
     // Tabel 1.2
-    Route::get('/tabel-1-2', [Tabel_1_2_Controller::class, 'index']);
-    Route::get('/tabel-1-2/create', [Tabel_1_2_Controller::class, 'create']);
-    Route::post('/tabel-1-2', [Tabel_1_2_Controller::class, 'store']);
-    Route::get('/tabel-1-2/edit/{id}', [Tabel_1_2_Controller::class, 'edit']);
-    Route::put('/tabel-1-2/{id}', [Tabel_1_2_Controller::class, 'update']);
-    Route::get('/tabel-1-2/delete/{id}', [Tabel_1_2_Controller::class, 'destroy']);
+    Route::resource('tabel-1-2', Tabel_1_2_Controller::class);
 
     // Tabel 1.3
-    Route::get('/tabel-1-3', [Tabel_1_3_Controller::class, 'index']);
-    Route::get('/tabel-1-3/create', [Tabel_1_3_Controller::class, 'create']);
-    Route::post('/tabel-1-3', [Tabel_1_3_Controller::class, 'store']);
-    Route::get('/tabel-1-3/edit/{id}', [Tabel_1_3_Controller::class, 'edit']);
-    Route::put('/tabel-1-3/{id}', [Tabel_1_3_Controller::class, 'update']);
-    Route::get('/tabel-1-3/delete/{id}', [Tabel_1_3_Controller::class, 'destroy']);
+    Route::resource('tabel-1-3', Tabel_1_3_Controller::class);
 
     // Tabel 2.a
     Route::get('/tabel-2-a', [Tabel_2_A_Controller::class, 'index']);

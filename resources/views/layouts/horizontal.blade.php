@@ -196,7 +196,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('index')}}">
-                                <i class="uil-home-alt me-2"></i> @lang('translation.Dashboard')
+                                <i class="uil-home-alt me-2"></i> Dashboard
                             </a>
                         </li>
 
@@ -207,30 +207,30 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="kerjasama">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('kerjasama-pendidikan')}}" id="topnav-table" role="button">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('kerjasama-pendidikan')}}" role="button">
                                         Kerjasama Pendidikan
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('tabel-1-2')}}" role="button">
                                         Kerjasama Penelitian
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('tabel-1-3')}}" role="button">
                                         Kerjasama Pengabdian Kepada Masyarakat
                                     </a>
                                 </div>
                             </div>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="mahasiswa" role="button"
                                >
                                 <i class="uil-layers me-2"></i>Mahasiswa <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="mahasiswa">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                         Seleksi Mahasiswa
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                         Mahasiswa Asing
                                     </a>
                                 </div>
@@ -249,58 +249,58 @@
                                         <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-dosen">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Dosen Tetap Perguruan Tinggi
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Dosen Pembimbing Utama Tugas Akhir
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Dosen Tidak Tetap
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Dosen Industri/Praktisi
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Pengakuan/Rekognisi Dosen
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Penilitian DTPS
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             PkM DTPS
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Publikasi Ilmiah DTPS
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Karya Ilmiah DTPS yang Disitasi
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
                                         </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" id="topnav-table" role="button">
+                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
                                             Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                     </ul>
 
                 </div>

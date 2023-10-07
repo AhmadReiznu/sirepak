@@ -10,11 +10,11 @@ Kerjasama
 @section('content')
 @component('common-components.breadcrumb')
 @slot('pagetitle') Kerjasama @endslot
-@slot('title') Kerjasama Pendidikan @endslot
+@slot('title') Kerjasama Penelitian @endslot
 @endcomponent
 
 <button class="btn btn-success mb-4">
-    <a href="{{ Route('kerjasama-pendidikan.create') }}" class="text-white">Tambah</a>
+    <a href="{{ Route('tabel-1-2.create') }}" class="text-white">Tambah</a>
 </button>
 
 <div class="row">
@@ -41,7 +41,7 @@ Kerjasama
                                 <th>Nasional</th>
                                 <th>Wilayah/Lokal</th>
                             </tr>
-                            @foreach ($tabels11 as $tabel)
+                            @foreach ($tabels12 as $tabel)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $tabel->lembaga_mitra }}</td>
