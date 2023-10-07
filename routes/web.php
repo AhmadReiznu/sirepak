@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tabel1Controller;
 use App\Http\Controllers\KerjasamaPendidikan;
+use App\Http\Controllers\Tabel_1_1_Controller;
 use App\Http\Controllers\Tabel_1_2_Controller;
 use App\Http\Controllers\Tabel_1_3_Controller;
 use App\Http\Controllers\Tabel_2_A_Controller;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Tabel_3_B_1_Controller;
 use App\Http\Controllers\Tabel_3_B_2_Controller;
 use App\Http\Controllers\Tabel_3_B_3_Controller;
 use App\Http\Controllers\Tabel_3_B_4_1_Controller;
+use App\Http\Controllers\Tabel_3_B_4_2_Controller;
 use App\Http\Controllers\Tabel_3_B_5_Controller;
 use App\Http\Controllers\Tabel_3_B_6_Controller;
 use App\Http\Controllers\Tabel_3_B_7_1_Controller;
@@ -31,13 +33,18 @@ use App\Http\Controllers\Tabel_6_A_Controller;
 use App\Http\Controllers\Tabel_6_B_Controller;
 use App\Http\Controllers\Tabel_7_Controller;
 use App\Http\Controllers\Tabel_8_A_Controller;
+use App\Http\Controllers\Tabel_8_B_1_Controller;
+use App\Http\Controllers\Tabel_8_B_2_Controller;
 use App\Http\Controllers\Tabel_8_C_1_Controller;
 use App\Http\Controllers\Tabel_8_C_2_Controller;
 use App\Http\Controllers\Tabel_8_C_3_Controller;
+use App\Http\Controllers\Tabel_8_C_4_Controller;
 use App\Http\Controllers\Tabel_8_D_1_A_Controller;
 use App\Http\Controllers\Tabel_8_D_1_B_Controller;
+use App\Http\Controllers\Tabel_8_D_1_C_Controller;
 use App\Http\Controllers\Tabel_8_D_2_Controller;
 use App\Http\Controllers\Tabel_8_E_1_Controller;
+use App\Http\Controllers\Tabel_8_E_2_Controller;
 use App\Http\Controllers\Tabel_8_F_1_1_Controller;
 use App\Http\Controllers\Tabel_8_F_1_2_Controller;
 use App\Http\Controllers\Tabel_8_F_2_Controller;
@@ -88,7 +95,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
 
     // Tabel 1.1
-    Route::resource('kerjasama-pendidikan', KerjasamaPendidikan::class);
+    Route::get('/tabel-1-1', [Tabel_1_1_Controller::class, 'index']);
+    Route::get('/tabel-1-1/create', [Tabel_1_1_Controller::class, 'create']);
+    Route::post('/tabel-1-1', [Tabel_1_1_Controller::class, 'store']);
+    Route::get('/tabel-1-1/edit/{id}', [Tabel_1_1_Controller::class, 'edit']);
+    Route::put('/tabel-1-1/{id}', [Tabel_1_1_Controller::class, 'update']);
+    Route::get('/tabel-1-1/delete/{id}', [Tabel_1_1_Controller::class, 'destroy']);
 
     // Tabel 1.2
     Route::resource('tabel-1-2', Tabel_1_2_Controller::class);

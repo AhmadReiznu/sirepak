@@ -12,10 +12,10 @@ Kerjasama Pendidikan
 <div class="row">
     <div class="col-12">
         {{-- <button class="btn btn-secondary mb-5">
-            <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Kembali</a>
+            <a href="{{ url('tabel-1-1') }}" class="text-white">Kembali</a>
         </button> --}}
         <div class="card">
-            <form action="{{ route('kerjasama-pendidikan.update', $tabel_1_1->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('tabel-1-1/'. $tabel_1_1->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
@@ -63,7 +63,8 @@ Kerjasama Pendidikan
                         <label for="bukti_kerjasama" class="col-md-2 col-form-label">Bukti Kerjasama</label>
                         <div class="col-md-10">
                             <p>File yang sudah diunggah : </p><span>{{ asset('dokumen/'.$tabel_1_1->bukti_kerjasama) }}</span>
-                            <input class="form-control" type="file" name="bukti_kerjasama" value="{{ $tabel_1_1->bukti_kerjasama }}" id="bukti_kerjasama">
+                            <input class="form-control" type="file" name="bukti_kerjasama" value="" id="bukti_kerjasama">
+                            <input type="hidden" name="current_document" value="{{ $tabel_1_1->bukti_kerjasama }}" id="bukti_kerjasama">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -74,7 +75,7 @@ Kerjasama Pendidikan
                     </div>
                     <button type="submit" class="btn btn-success">Ubah</button>
                     <button class="btn btn-danger">
-                        <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Batal</a>
+                        <a href="{{ url('tabel-1-1') }}" class="text-white">Batal</a>
                     </button>
                 </div>
             </form>
