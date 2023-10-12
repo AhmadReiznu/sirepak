@@ -83,6 +83,13 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
+// //Language Translation
+
+Route::get('index/{locale}', [App\Http\Controllers\DashboardController::class, 'lang']);
+
+Route::post('/formsubmit', [App\Http\Controllers\DashboardController::class, 'FormSubmit'])->name('FormSubmit');
+
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     // Create user
 
@@ -380,10 +387,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'root']);
-
-Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index']);
-// //Language Translation
-
-Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
-
-Route::post('/formsubmit', [App\Http\Controllers\HomeController::class, 'FormSubmit'])->name('FormSubmit');

@@ -22,8 +22,7 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="data-table table table-striped table-bordered dt-responsive nowrap"
-                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table class="data-table table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th>No</th>
@@ -34,7 +33,7 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>

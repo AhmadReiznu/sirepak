@@ -187,7 +187,7 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('index')}}">
+                            <a class="nav-link" href="{{url('dashboard')}}">
                                 <i class="uil-home-alt me-2"></i> Dashboard
                             </a>
                         </li>

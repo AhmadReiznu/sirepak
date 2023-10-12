@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->tinyInteger('role')->default(0);
+            $table->string('role')->default('dosen');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
-            'role' => 1,
+            'role' => 'admin',
             'email_verified_at' => '2022-01-02 17:04:58',
             'created_at' => now(),
         ]);
