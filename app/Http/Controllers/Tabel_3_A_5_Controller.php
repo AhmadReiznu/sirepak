@@ -6,15 +6,36 @@ use App\Models\Tabel_3_A_5;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Tabel_3_A_5_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Tabel_3_A_5::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <form class="inline-block" action="' . route('tabel-3-a-5.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <a href="' . route("tabel-3-a-5.edit", $row->id) . ' " . class="edit btn btn-success btn-sm">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('tabel-3-a-5.index');
     }
 
     /**
@@ -22,7 +43,7 @@ class Tabel_3_A_5_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('tabel-3-a-5.create');
     }
 
     /**
@@ -32,7 +53,7 @@ class Tabel_3_A_5_Controller extends Controller
     {
         // dd($request->all());
         $rules = [
-            'nama_dosen_ndustri' => 'required',
+            'nama_dosen_industri' => 'required',
             'perusahaan' => 'required',
             'pendidikan_tertinggi' => 'required',
             'bidang_keahlian' => 'required',
@@ -48,7 +69,7 @@ class Tabel_3_A_5_Controller extends Controller
         } else {
             // store
             $tabel_3_a_5 = new Tabel_3_A_5;
-            $tabel_3_a_5->nama_dosen_ndustri = $request->nama_dosen_ndustri;
+            $tabel_3_a_5->nama_dosen_industri = $request->nama_dosen_industri;
             $tabel_3_a_5->nidk = $request->nidk;
             $tabel_3_a_5->perusahaan = $request->perusahaan;
             $tabel_3_a_5->pendidikan_tertinggi = $request->pendidikan_tertinggi;
@@ -77,7 +98,8 @@ class Tabel_3_A_5_Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tabel_3_a_5 = Tabel_3_A_5::find($id);
+        return view('tabel-3-A-5.edit', compact('tabel_3_a_5'));
     }
 
     /**
@@ -96,7 +118,7 @@ class Tabel_3_A_5_Controller extends Controller
         } else {
             // update
             $tabel_3_a_5 = Tabel_3_A_5::find($id);
-            $tabel_3_a_5->nama_dosen_ndustri = $request->nama_dosen_ndustri;
+            $tabel_3_a_5->nama_dosen_industri = $request->nama_dosen_industri;
             $tabel_3_a_5->nidk = $request->nidk;
             $tabel_3_a_5->perusahaan = $request->perusahaan;
             $tabel_3_a_5->pendidikan_tertinggi = $request->pendidikan_tertinggi;

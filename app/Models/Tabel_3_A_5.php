@@ -12,7 +12,7 @@ class Tabel_3_A_5 extends Model
     protected $table = 'tabel_3_a_5';
 
     protected $fillable = [
-        'nama_dosen_ndustri',
+        'nama_dosen_industri',
         'nidk',
         'perusahaan',
         'pendidikan_tertinggi',

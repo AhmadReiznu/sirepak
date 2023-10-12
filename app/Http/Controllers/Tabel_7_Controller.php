@@ -6,15 +6,36 @@ use App\Models\Tabel_7;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Tabel_7_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Tabel_7::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <form class="inline-block" action="' . route('tabel-7.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <a href="' . route("tabel-7.edit", $row->id) . ' " . class="edit btn btn-success btn-sm">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('tabel-7.index');
     }
 
     /**
@@ -22,7 +43,7 @@ class Tabel_7_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('tabel-7.create');
     }
 
     /**
@@ -33,7 +54,7 @@ class Tabel_7_Controller extends Controller
         // dd($request->all());
         $rules = [
             'nama_dosen' => 'required',
-            'tema_penelitian_sesuai_roadmap' => 'required',
+            'tema_pkm_sesuai_roadmap' => 'required',
             'nama_mahasiswa' => 'required',
             'judul_kegiatan' => 'required',
             'tahun' => 'required',
@@ -48,7 +69,7 @@ class Tabel_7_Controller extends Controller
             // store
             $tabel_7 = new Tabel_7;
             $tabel_7->nama_dosen = $request->nama_dosen;
-            $tabel_7->tema_penelitian_sesuai_roadmap = $request->tema_penelitian_sesuai_roadmap;
+            $tabel_7->tema_pkm_sesuai_roadmap = $request->tema_pkm_sesuai_roadmap;
             $tabel_7->nama_mahasiswa = $request->nama_mahasiswa;
             $tabel_7->judul_kegiatan = $request->judul_kegiatan;
             $tabel_7->tahun = $request->tahun;
@@ -73,7 +94,8 @@ class Tabel_7_Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tabel_7 = Tabel_7::find($id);
+        return view('tabel-7.edit', compact('tabel_7'));
     }
 
     /**
@@ -84,7 +106,7 @@ class Tabel_7_Controller extends Controller
         // dd($request->all());
         $rules = [
             'nama_dosen' => 'required',
-            'tema_penelitian_sesuai_roadmap' => 'required',
+            'tema_pkm_sesuai_roadmap' => 'required',
             'nama_mahasiswa' => 'required',
             'judul_kegiatan' => 'required',
             'tahun' => 'required',
@@ -99,7 +121,7 @@ class Tabel_7_Controller extends Controller
             // update
             $tabel_7 = Tabel_7::find($id);
             $tabel_7->nama_dosen = $request->nama_dosen;
-            $tabel_7->tema_penelitian_sesuai_roadmap = $request->tema_penelitian_sesuai_roadmap;
+            $tabel_7->tema_pkm_sesuai_roadmap = $request->tema_pkm_sesuai_roadmap;
             $tabel_7->nama_mahasiswa = $request->nama_mahasiswa;
             $tabel_7->judul_kegiatan = $request->judul_kegiatan;
             $tabel_7->tahun = $request->tahun;

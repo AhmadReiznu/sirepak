@@ -18,7 +18,7 @@ class Tabel_1_1_Controller extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Tabel_1_1::select('*');
+            $data = Tabel_1_1::all();
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('internasional', function ($row) {
@@ -39,15 +39,22 @@ class Tabel_1_1_Controller extends Controller
                 })
                 ->addColumn('action', function ($row) {
                     $actionBtn = '
-                    <a href=tabel-1-1/edit/' . $row->id . ' class="edit btn btn-success btn-sm">Edit</a>
-                    <a href=tabel-1-1/delete/' . $row->id . ' class="delete btn btn-danger btn-sm">Delete</a>';
+                    <form class="inline-block" action="' . route('tabel-1-1.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <a href="' . route("tabel-1-1.edit", $row->id) . ' " . class="edit btn btn-success btn-sm">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
                     return $actionBtn;
                 })
                 ->rawColumns(['internasional', 'nasional', 'lokal', 'bukti', 'action'])
                 ->make(true);
         }
         $tabels11 = Tabel_1_1::all();
-        return view('kerjasama-pendidikan.index');
+        return view('tabel-1-1.index');
     }
 
     /**
@@ -55,7 +62,7 @@ class Tabel_1_1_Controller extends Controller
      */
     public function create()
     {
-        return view('kerjasama-pendidikan.create');
+        return view('tabel-1-1.create');
     }
 
     /**
@@ -117,7 +124,7 @@ class Tabel_1_1_Controller extends Controller
     public function edit(string $id)
     {
         $tabel_1_1 = Tabel_1_1::find($id);
-        return view('kerjasama-pendidikan.edit', compact('tabel_1_1'));
+        return view('tabel-1-1.edit', compact('tabel_1_1'));
     }
 
     /**

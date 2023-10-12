@@ -6,15 +6,36 @@ use App\Models\Tabel_8_F_1_1;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Tabel_8_F_1_1_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Tabel_8_F_1_1::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <form class="inline-block" action="' . route('tabel-8-f-1-1.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <a href="' . route("tabel-8-f-1-1.edit", $row->id) . ' " . class="edit btn btn-success btn-sm">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('tabel-8-f-1-1.index');
     }
 
     /**
@@ -22,7 +43,7 @@ class Tabel_8_F_1_1_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('tabel-8-f-1-1.create');
     }
 
     /**
@@ -36,7 +57,6 @@ class Tabel_8_F_1_1_Controller extends Controller
             'jumlah_judul_ts_2' => 'required|integer',
             'jumlah_judul_ts_1' => 'required|integer',
             'jumlah_judul_ts' => 'required|integer',
-            'jumlah' => 'required|integer',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -51,7 +71,10 @@ class Tabel_8_F_1_1_Controller extends Controller
             $tabel_8_f_1_1->jumlah_judul_ts_2 = $request->jumlah_judul_ts_2;
             $tabel_8_f_1_1->jumlah_judul_ts_1 = $request->jumlah_judul_ts_1;
             $tabel_8_f_1_1->jumlah_judul_ts = $request->jumlah_judul_ts;
-            $tabel_8_f_1_1->jumlah = $request->jumlah;
+            $tabel_8_f_1_1->jumlah =
+                $request->jumlah_judul_ts_2 +
+                $request->jumlah_judul_ts_1 +
+                $request->jumlah_judul_ts;
             $tabel_8_f_1_1->save();
 
             // redirect
@@ -73,7 +96,8 @@ class Tabel_8_F_1_1_Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tabel_8_f_1_1 = Tabel_8_F_1_1::find($id);
+        return view('tabel-8-f-1-1.edit', compact('tabel_8_f_1_1'));
     }
 
     /**
@@ -86,7 +110,6 @@ class Tabel_8_F_1_1_Controller extends Controller
             'jumlah_judul_ts_2' => 'required|integer',
             'jumlah_judul_ts_1' => 'required|integer',
             'jumlah_judul_ts' => 'required|integer',
-            'jumlah' => 'required|integer',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -101,7 +124,10 @@ class Tabel_8_F_1_1_Controller extends Controller
             $tabel_8_f_1_1->jumlah_judul_ts_2 = $request->jumlah_judul_ts_2;
             $tabel_8_f_1_1->jumlah_judul_ts_1 = $request->jumlah_judul_ts_1;
             $tabel_8_f_1_1->jumlah_judul_ts = $request->jumlah_judul_ts;
-            $tabel_8_f_1_1->jumlah = $request->jumlah;
+            $tabel_8_f_1_1->jumlah =
+                $request->jumlah_judul_ts_2 +
+                $request->jumlah_judul_ts_1 +
+                $request->jumlah_judul_ts;
             $tabel_8_f_1_1->save();
 
             // redirect

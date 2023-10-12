@@ -6,15 +6,36 @@ use App\Models\Tabel_3_B_7_2;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Tabel_3_B_7_2_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            $data = Tabel_3_B_7_2::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <form class="inline-block" action="' . route('tabel-3-b-7-2.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <a href="' . route("tabel-3-b-7-2.edit", $row->id) . ' " . class="edit btn btn-success btn-sm">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('tabel-3-b-7-2.index');
     }
 
     /**
@@ -22,7 +43,7 @@ class Tabel_3_B_7_2_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('tabel-3-b-7-2.create');
     }
 
     /**
@@ -69,7 +90,8 @@ class Tabel_3_B_7_2_Controller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tabel_3_b_7_2 = Tabel_3_B_7_2::find($id);
+        return view('tabel-3-B-7-2.edit', compact('tabel_3_b_7_2'));
     }
 
     /**
@@ -92,7 +114,7 @@ class Tabel_3_B_7_2_Controller extends Controller
         } else {
             // update
             $tabel_3_b_7_2 = Tabel_3_B_7_2::find($id);
-            $tabel_3_b_7_2->luaran_penelitian_ddan_pkm = $request->luaran_penelitian_dan_pkm;
+            $tabel_3_b_7_2->luaran_penelitian_dan_pkm = $request->luaran_penelitian_dan_pkm;
             $tabel_3_b_7_2->tahun = $request->tahun;
             $tabel_3_b_7_2->keterangan = $request->keterangan;
             $tabel_3_b_7_2->save();

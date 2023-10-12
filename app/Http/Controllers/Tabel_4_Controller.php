@@ -6,16 +6,36 @@ use App\Models\Tabel_4;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class Tabel_4_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $tabel_4s = Tabel_4::all();
-        // return view('logic-test.index', compact('tabel_4s'));
+        if ($request->ajax()) {
+            $data = Tabel_4::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <form class="inline-block" action="' . route('tabel-4.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <a href="' . route("tabel-4.edit", $row->id) . ' " . class="edit btn btn-success btn-sm">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('tabel-4.index');
     }
 
     /**
@@ -23,7 +43,7 @@ class Tabel_4_Controller extends Controller
      */
     public function create()
     {
-        // return view('logic-test.create');
+        return view('tabel-4.create');
     }
 
     /**
@@ -31,7 +51,7 @@ class Tabel_4_Controller extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $rules = [
             'jenis_penggunaan' => 'required',
             'unit_pengelola_program_studi_ts_2' => 'required',
@@ -126,8 +146,8 @@ class Tabel_4_Controller extends Controller
      */
     public function edit(string $id)
     {
-        // $tabel_4 = Tabel_4::find($id);
-        // return view('logic-test.edit', compact('tabel_4'));
+        $tabel_4 = Tabel_4::find($id);
+        return view('tabel-4.edit', compact('tabel_4'));
     }
 
     /**

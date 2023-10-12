@@ -193,12 +193,12 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="kerjasama" role="button">
-                                <i class="uil-layers me-2"></i>Kerjasama <div class="arrow-down"></div>
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_1" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 1 <div class="arrow-down"></div>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="kerjasama">
+                            <div class="dropdown-menu" aria-labelledby="tabel_1">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="{{ url('kerjasama-pendidikan')}}" role="button">
+                                    <a class="dropdown-item {{ request()->is('tabel-1-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-1-1.index')}}" role="button">
                                         Kerjasama Pendidikan
                                     </a>
                                     <a class="dropdown-item {{ request()->is('tabel-1-2') ? 'bg-primary text-white' : '' }}" href="{{ url('tabel-1-2')}}">
@@ -212,15 +212,15 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="mahasiswa" role="button">
-                                <i class="uil-layers me-2"></i>Mahasiswa <div class="arrow-down"></div>
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_2" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 2 <div class="arrow-down"></div>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="mahasiswa">
+                            <div class="dropdown-menu" aria-labelledby="tabel_2">
                                 <div class="dropdown">
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
+                                    <a class="dropdown-item {{ request()->is('tabel-2-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-2-a.index') }}" role="button">
                                         Seleksi Mahasiswa
                                     </a>
-                                    <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
+                                    <a class="dropdown-item {{ request()->is('tabel-2-b') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-2-b.index') }}" role="button">
                                         Mahasiswa Asing
                                     </a>
                                 </div>
@@ -228,68 +228,228 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="dosen" role="button"
-                               >
-                                <i class="uil-layers me-2"></i>Dosen <div class="arrow-down"></div>
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_3" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 3 <div class="arrow-down"></div>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="dosen">
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-item dropdown-toggle arrow-none" id="topnav-dosen" role="button" target="_top">
-                                        Data Dosen
-                                        <div class="arrow-down"></div>
+                            <div class="dropdown-menu">
+                                <div class="dropdown" aria-labelledby="tabel_3">
+                                    <a class="dropdown-item {{ request()->is('tabel-3-a-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-a-1.index') }}" role="button">
+                                        Dosen Tetap Perguruan Tinggi
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="topnav-dosen">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Dosen Tetap Perguruan Tinggi
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Dosen Pembimbing Utama Tugas Akhir
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Dosen Tidak Tetap
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Dosen Industri/Praktisi
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Pengakuan/Rekognisi Dosen
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Penilitian DTPS
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            PkM DTPS
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Publikasi Ilmiah DTPS
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Karya Ilmiah DTPS yang Disitasi
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
-                                        </a>
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="" role="button">
-                                            Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter
-                                        </a>
-                                    </div>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-a-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-a-2.index') }}" role="button">
+                                        Dosen Pembimbing Utama Tugas Akhir
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-a-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-a-3.index') }}" role="button">
+                                        Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-a-4') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-a-4.index') }}" role="button">
+                                        Dosen Tidak Tetap
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-a-5') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-a-5.index') }}" role="button">
+                                        Dosen Industri/Praktisi
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-1.index') }}" role="button">
+                                        Pengakuan/Rekognisi DTPS
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-2.index') }}" role="button">
+                                        Penilitian DTPS
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-3.index') }}" role="button">
+                                        PkM DTPS
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-4-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-4-1.index') }}" role="button">
+                                        Publikasi Ilmiah DTPS
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-4-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-4-2.index') }}" role="button">
+                                        Pagelaran/Pameran/Presentasi/Publikasi Ilmiah DTPS
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-5') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-5.index') }}" role="button">
+                                        Karya Ilmiah DTPS yang Disitasi
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-6') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-6.index') }}" role="button">
+                                        Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-7-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-7-1.index') }}" role="button">
+                                        Luaran Penelitian/PkM Lainnya - HKI (Paten, Paten Sederhana)
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-7-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-7-2.index') }}" role="button">
+                                        Luaran Penelitian/PkM Lainnya - HKI (Hak Cipta, Desain Produk Industri, dll.)
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-7-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-7-3.index') }}" role="button">
+                                        Luaran Penelitian/PkM Lainnya - Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
+                                    </a>
+                                    <a class="dropdown-item {{ request()->is('tabel-3-b-7-4') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-3-b-7-4.index') }}" role="button">
+                                        Luaran Penelitian/PkM Lainnya - Buku ber-ISBN, Book Chapter
+                                    </a>
                                 </div>
                             </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="lain_lain" role="button">
+                                <i class="uil-layers me-2"></i>Lain-Lain <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="lain_lain">
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-4') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-4.index') }}" role="button">
+                                        Penggunaan Dana
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-5-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-5-a.index') }}" role="button">
+                                        Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-5-b') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-5-b.index') }}" role="button">
+                                        Integrasi Kegiatan Penelitian/PkM dalam Pembelajaran
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-5-c') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-5-c.index') }}" role="button">
+                                        Kepuasan Mahasiswa
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-6-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-6-a.index') }}" role="button">
+                                        Penelitian DTPS yang Melibatkan Mahasiswa
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-6-b') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-6-b.index') }}" role="button">
+                                        Penelitian DTPS yang Menjadi Rujukan Tema Tesis/Disertasi
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-7') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-7.index') }}" role="button">
+                                        PkM DTPS yang Melibatkan Mahasiswa
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_8" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 8 <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="tabel_8">
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-a.index') }}" role="button">
+                                        IPK Lulusan
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-b-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-b-1.index') }}" role="button">
+                                        Prestasi Akademik Mahasiswa
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-b-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-b-2.index') }}" role="button">
+                                        Prestasi Non-akademik Mahasiswa
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-c-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-c-1.index') }}" role="button">
+                                        Masa Studi Lulusan (1)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-c-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-c-2.index') }}" role="button">
+                                        Masa Studi Lulusan (2)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-c-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-c-3.index') }}" role="button">
+                                        Masa Studi Lulusan (3)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-c-4') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-c-4.index') }}" role="button">
+                                        Masa Studi Lulusan (4)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-d-1-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-d-1-a.index') }}" role="button">
+                                        Waktu Tunggu Lulusan (1)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-d-1-b') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-d-1-b.index') }}" role="button">
+                                        Waktu Tunggu Lulusan (2)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-d-1-c') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-d-1-c.index') }}" role="button">
+                                        Waktu Tunggu Lulusan (3)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-d-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-d-2.index') }}" role="button">
+                                        Kesesuaian Bidang Kerja Lulusan
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-e-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-e-1.index') }}" role="button">
+                                        Tempat Kerja Lulusan
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-e-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-e-2.index') }}" role="button">
+                                        Kepuasan Pengguna Lulusan
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-ref-8-e-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-ref-8-e-2.index') }}" role="button">
+                                        Tabel Referensi : Kepuasan Pengguna Lulusan
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-1-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-1-1.index') }}" role="button">
+                                        Publikasi Ilmiah Mahasiswa
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-1-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-1-2.index') }}" role="button">
+                                        Pagelaran/Pameran/Presentasi/Publikasi Ilmiah Mahasiswa
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-2.index') }}" role="button">
+                                        Karya Ilmiah Mahasiswa yang Disitasi
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-3.index') }}" role="button">
+                                        Produk/Jasa DTPS yang Dihasilkan Mahasiswa yang Diadopsi oleh Industri/Masyarakat
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-4-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-4-1.index') }}" role="button">
+                                        Luaran Penelitian/PkM yang Dihasilkan Mahasiswa - Bagian-1 HKI (Paten, Paten Sederhana)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-4-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-4-2.index') }}" role="button">
+                                        Luaran Penelitian/PkM yang Dihasilkan Mahasiswa - Bagian-2 HKI (Hak Cipta, Desain Produk Industri, dll.)
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-4-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-4-3.index') }}" role="button">
+                                        Luaran Penelitian/PkM yang Dihasilkan Mahasiswa - Bagian-3 Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-item {{ request()->is('tabel-8-f-4-4') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-8-f-4-4.index') }}" role="button">
+                                        Luaran Penelitian/PkM yang Dihasilkan Mahasiswa - Bagian-4 Buku Ber-ISBN, Book Chapter
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}" id="lain_lain" role="button">
+                                <i class="uil-layers me-2"></i>User
+                            </a>
                         </li>
                     </ul>
 
