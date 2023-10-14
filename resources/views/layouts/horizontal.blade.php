@@ -164,9 +164,9 @@
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
                 <a class="dropdown-item" href="#"><i class="uil uil-user-circle font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">@lang('translation.View_Profile')</span></a>
-                <a class="dropdown-item" href="#"><i class="uil uil-wallet font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.My_Wallet')</span></a>
+                {{-- <a class="dropdown-item" href="#"><i class="uil uil-wallet font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.My_Wallet')</span></a>
                 <a class="dropdown-item d-block" href="#"><i class="uil uil-cog font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Settings')</span> <span class="badge bg-soft-success rounded-pill mt-1 ms-2">03</span></a>
-                <a class="dropdown-item" href="#"><i class="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Lock_screen')</span></a>
+                <a class="dropdown-item" href="#"><i class="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Lock_screen')</span></a> --}}
                 <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Sign_out')</span></a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -201,10 +201,10 @@
                                     <a class="dropdown-item {{ request()->is('tabel-1-1') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-1-1.index')}}" role="button">
                                         Kerjasama Pendidikan
                                     </a>
-                                    <a class="dropdown-item {{ request()->is('tabel-1-2') ? 'bg-primary text-white' : '' }}" href="{{ url('tabel-1-2')}}">
+                                    <a class="dropdown-item {{ request()->is('tabel-1-2') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-1-2.index')}}">
                                         Kerjasama Penelitian
                                     </a>
-                                    <a class="dropdown-item {{ request()->is('tabel-1-3') ? 'bg-primary text-white' : '' }}" href="{{ url('tabel-1-3')}}">
+                                    <a class="dropdown-item {{ request()->is('tabel-1-3') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-1-3.index')}}">
                                         Kerjasama Pengabdian Kepada Masyarakat
                                     </a>
                                 </div>

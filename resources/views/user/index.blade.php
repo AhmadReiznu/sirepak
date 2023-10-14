@@ -1,6 +1,6 @@
 @extends('layouts.master-layouts')
 @section('title')
-Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
+User
 @endsection
 @section('css')
 <!-- DataTables -->
@@ -10,11 +10,11 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
 @section('content')
 @component('common-components.breadcrumb')
 @slot('pagetitle') Dashboard @endslot
-@slot('title') Bagian-4 Buku Ber-ISBN, Book Chapter @endslot
+@slot('title') User @endslot
 @endcomponent
 
 <button class="btn btn-success mb-4">
-    <a href="{{ route('tabel-8-f-4-4.create') }}" class="text-white">Tambah</a>
+    <a href="{{ route('users.create') }}" class="text-white">Tambah</a>
 </button>
 
 <div class="row">
@@ -26,9 +26,9 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th>No</th>
-                                <th>Luaran Penelitian dan PkM</th>
-                                <th>Tahun<br>(YYYY)</th>
-                                <th>Keterangan</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Role</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -56,23 +56,23 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('/tabel-8-f-4-4') }}",
+            ajax: "{{ url('/users') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     name: 'DT_RowIndex',
                     searchable: false
                 },
                 {
-                    data: 'luaran_penelitian_dan_pkm',
-                    name: 'luaran_penelitian_dan_pkm'
+                    data: 'name',
+                    name: 'name'
                 },
                 {
-                    data: 'tahun',
-                    name: 'tahun'
+                    data: 'email',
+                    name: 'email'
                 },
                 {
-                    data: 'keterangan',
-                    name: 'keterangan'
+                    data: 'role',
+                    name: 'role'
                 },
                 {
                     data: 'action',

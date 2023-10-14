@@ -1,11 +1,11 @@
 @extends('layouts.master-layouts')
 @section('title')
-Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
+User
 @endsection
 
 @section('content')
 @component('common-components.breadcrumb')
-@slot('pagetitle') Bagian-4 Buku Ber-ISBN, Book Chapter @endslot
+@slot('pagetitle') User @endslot
 @slot('title') Tambah @endslot
 @endcomponent
 
@@ -15,35 +15,42 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
             <a href="{{ route('kerjasama-pendidikan.index') }}" class="text-white">Kembali</a>
         </button> --}}
         <div class="card">
-            <form action="{{ route('tabel-8-f-4-4.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                    <h4 class="card-title">Tambah Data Luaran Penelitian/PkM yang Dihasilkan Mahasiswa</h4>
+                    <h4 class="card-title">Tambah Data User</h4>
                     
                     <div class="mb-3 row">
-                        <label for="luaran_penelitian_dan_pkm" class="col-md-2 col-form-label">Luaran Penelitian dan PkM</label>
+                        <label for="name" class="col-md-2 col-form-label">Nama</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="text" name="luaran_penelitian_dan_pkm" id="luaran_penelitian_dan_pkm">
+                            <input class="form-control" type="text" name="name" id="name">
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="tahun" class="col-md-2 col-form-label">Tahun</label>
+                        <label for="email" class="col-md-2 col-form-label">Email</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="number" name="tahun" id="tahun">
+                            <input class="form-control" type="email" name="email" id="email">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row">
+                        <label for="password" class="col-md-2 col-form-label">Password</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="password" name="password" id="password">
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="keterangan" class="col-md-2 col-form-label">Keterangan</label>
+                        <label for="password_confirmation" class="col-md-2 col-form-label">Konfirmasi Password</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="keterangan" id="keterangan" cols="30" rows="10"></textarea>
+                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-success">Tambah</button>
                     <button class="btn btn-danger">
-                        <a href="{{ route('tabel-8-f-4-4.index') }}" class="text-white">Batal</a>
+                        <a href="{{ route('users.index') }}" class="text-white">Batal</a>
                     </button>
                 </div>
             </form>

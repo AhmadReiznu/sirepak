@@ -7,18 +7,35 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
-        return view('logic-test.index', compact('users'));
+        if ($request->ajax()) {
+            $data = User::all();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn = '
+                    <form class="inline-block" action="' . route('users.destroy', $row->id) . '" method="POST" onsubmit="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')">
+                        <button data-toggle="modal" data-target="#deleteModal' . $row->id . '" class="btn btn-danger btn-sm btn-delete rounded-md px-2 py-1 m-1">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                        ' . method_field('delete') . csrf_field() . '
+                    </form>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('user.index');
     }
 
     public function create()
     {
-        return view('logic-test.create');
+        return view('user.create');
     }
 
     public function store(Request $request)
@@ -47,7 +64,7 @@ class UserController extends Controller
 
             // redirect
             Session::flash('message', 'Successfully created!');
-            return redirect('/users');
+            return redirect()->route('users.index');
         }
     }
 
@@ -57,6 +74,6 @@ class UserController extends Controller
 
         // redirect
         Session::flash('message', 'Successfully deleted!');
-        return redirect('/users');
+        return redirect()->route('users.index');
     }
 }
