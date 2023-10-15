@@ -157,7 +157,7 @@
 
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{ URL::asset('/assets/images/users/avatar-4.jpg') }}" alt="Header Avatar">
+                <img class="rounded-circle header-profile-user" src="{{ URL::asset('/assets/images/user.png') }}" alt="Header Avatar">
                 <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">{{Str::ucfirst(Auth::user()->name)}}</span>
                 <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
             </button>
@@ -446,11 +446,13 @@
                             </div>
                         </li>
 
+                        @if (auth()->user()->role == 'admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}" id="lain_lain" role="button">
                                 <i class="uil-layers me-2"></i>User
                             </a>
                         </li>
+                        @endif
                     </ul>
 
                 </div>

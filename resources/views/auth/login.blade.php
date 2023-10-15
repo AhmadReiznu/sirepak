@@ -10,8 +10,8 @@
                 <div class="text-center">
                     <h3>Login</h3>
                     {{-- <a href="{{ url('index') }}" class="mb-5 d-block auth-logo">
-                        <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="22" class="logo logo-dark">
-                        <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="22" class="logo logo-light">
+                    <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="22" class="logo logo-dark">
+                    <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="22" class="logo logo-light">
                     </a> --}}
                 </div>
             </div>
@@ -31,7 +31,7 @@
 
                                 <div class="mb-3">
                                     <label class="form-label" for="email">Email</label>
-                                    <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email', 'admin@themesbrand.com') }}" id="email" placeholder="Enter Email address">
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="email" placeholder="Enter Email address">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
                                         @endif
                                     </div>
                                     <label class="form-label" for="userpassword">Password</label>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" value="admin123" name="password" id="userpassword" placeholder="Enter password">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="userpassword" placeholder="Enter password">
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -65,7 +65,7 @@
                                         In</button>
                                 </div>
 
-                                <div class="mt-4 text-center">
+                                <!-- <div class="mt-4 text-center">
                                     <div class="signin-other-title">
                                         <h5 class="font-size-14 mb-3 title">Sign in with</h5>
                                     </div>
@@ -92,7 +92,7 @@
 
                                 <div class="mt-4 text-center">
                                     <p class="mb-0">Don't have an account ? <a href="{{ url('register') }}" class="fw-medium text-primary"> Signup now </a> </p>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
 
