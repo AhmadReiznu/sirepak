@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Tabel1Controller;
@@ -101,7 +102,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::get('/dashboard', [HomeController::class, 'index']);
+
+    Route::get('/change-password', [HomeController::class, 'changePassword']);
+    Route::post('/change-password/{id}', [HomeController::class, 'updatePassword']);
 
     // Tabel 1.1
     Route::resource('tabel-1-1', Tabel_1_1_Controller::class);

@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
+use App\Models\Tabel_4;
+use App\Models\Tabel_7;
 
 use App\Models\Tabel_1_1;
 use App\Models\Tabel_1_2;
 use App\Models\Tabel_1_3;
 use App\Models\Tabel_2_A;
 use App\Models\Tabel_2_B;
+use App\Models\Tabel_5_A;
+use App\Models\Tabel_5_B;
+use App\Models\Tabel_5_C;
+use App\Models\Tabel_6_A;
+use App\Models\Tabel_6_B;
+use App\Models\Tabel_8_A;
 use App\Models\Tabel_3_A_1;
 use App\Models\Tabel_3_A_2;
 use App\Models\Tabel_3_A_3;
@@ -20,44 +26,39 @@ use App\Models\Tabel_3_A_5;
 use App\Models\Tabel_3_B_1;
 use App\Models\Tabel_3_B_2;
 use App\Models\Tabel_3_B_3;
-use App\Models\Tabel_3_B_4_1;
-use App\Models\Tabel_3_B_4_2;
 use App\Models\Tabel_3_B_5;
 use App\Models\Tabel_3_B_6;
-use App\Models\Tabel_3_B_7_1;
-use App\Models\Tabel_3_B_7_2;
-use App\Models\Tabel_3_B_7_3;
-use App\Models\Tabel_3_B_7_4;
-use App\Models\Tabel_4;
-use App\Models\Tabel_5_A;
-use App\Models\Tabel_5_B;
-use App\Models\Tabel_5_C;
-use App\Models\Tabel_6_A;
-use App\Models\Tabel_6_B;
-use App\Models\Tabel_7;
-use App\Models\Tabel_8_A;
 use App\Models\Tabel_8_B_1;
 use App\Models\Tabel_8_B_2;
 use App\Models\Tabel_8_C_1;
 use App\Models\Tabel_8_C_2;
 use App\Models\Tabel_8_C_3;
 use App\Models\Tabel_8_C_4;
-use App\Models\Tabel_8_D_1_A;
-use App\Models\Tabel_8_D_1_B;
-use App\Models\Tabel_8_D_1_C;
 use App\Models\Tabel_8_D_2;
 use App\Models\Tabel_8_E_1;
 use App\Models\Tabel_8_E_2;
-use App\Models\Tabel_8_F_1_1;
-use App\Models\Tabel_8_F_1_2;
 use App\Models\Tabel_8_F_2;
 use App\Models\Tabel_8_F_3;
+use Illuminate\Http\Request;
+use App\Models\Tabel_3_B_4_1;
+use App\Models\Tabel_3_B_4_2;
+use App\Models\Tabel_3_B_7_1;
+use App\Models\Tabel_3_B_7_2;
+use App\Models\Tabel_3_B_7_3;
+use App\Models\Tabel_3_B_7_4;
+use App\Models\Tabel_8_D_1_A;
+use App\Models\Tabel_8_D_1_B;
+use App\Models\Tabel_8_D_1_C;
+use App\Models\Tabel_8_F_1_1;
+use App\Models\Tabel_8_F_1_2;
 use App\Models\Tabel_8_F_4_1;
 use App\Models\Tabel_8_F_4_2;
 use App\Models\Tabel_8_F_4_3;
 use App\Models\Tabel_8_F_4_4;
 use App\Models\Tabel_Ref_8_E_2;
-use App\Models\User;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -184,6 +185,41 @@ class HomeController extends Controller
             'tabel_ref_8_e_2' => $tabel_ref_8_e_2,
             'user' => $user,
         ]);
+    }
+
+    public function changePassword()
+    {
+        return view('user.change-password');
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        // dd($request->all());
+        $request->validate(
+            [
+                'old_password' => 'required',
+                'password' => 'required|min:6',
+                'confirm_password' => 'required|min:6|same:password',
+            ],
+            [
+                'old_password.required' => 'Password lama tidak boleh kosong!',
+                'password.required' => 'Password Baru tidak boleh kosong!',
+                'confirm_password.required' => 'Password Konfirmasi tidak boleh kosong!',
+                'password.min' => 'Password minimal 6 karakter!',
+                'confirm_password.min' => 'Password minimal 6 karakter!',
+                'confirm_password.same' => 'Konfirmasi password tidak sesuai!',
+            ]
+        );
+
+        $user = User::find($id);
+        if (Hash::check($request->old_password, $user->password)) {
+            $user->password = bcrypt($request->password);
+            $user->save();
+
+            return redirect()->back()->with('success_message', 'Password berhasil diubah!');
+        } else {
+            return redirect()->back()->with('error_message', 'Password lama tidak sesuai!');
+        }
     }
 
     // public function root()

@@ -28,32 +28,32 @@
         <div class="card">
             <a href="{{ route('tabel-1-2.index') }}">
                 <div class="card-body">
-                <div class="float-end mt-2">
-                    {{-- <div id="total-revenue-chart" data-colors='["--bs-primary"]'></div> --}}
+                    <div class="float-end mt-2">
+                        {{-- <div id="total-revenue-chart" data-colors='["--bs-primary"]'></div> --}}
+                    </div>
+                    <div>
+                        <h4 class="mb-1 mt-1">Tabel 1</h4>
+                        <p class="text-muted mb-0">Kerjasama Penelitian</p>
+                        <span class="badge bg-info">{{ $tabel_1_2 }}</span>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="mb-1 mt-1">Tabel 1</h4>
-                    <p class="text-muted mb-0">Kerjasama Penelitian</p>
-                    <span class="badge bg-info">{{ $tabel_1_2 }}</span>
-                </div>
-            </div>
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-8 col-xl-5">
         <div class="card">
             <a href="{{ route('tabel-1-3.index') }}">
                 <div class="card-body">
-                <div class="float-end mt-2">
-                    {{-- <div id="total-revenue-chart" data-colors='["--bs-primary"]'></div> --}}
+                    <div class="float-end mt-2">
+                        {{-- <div id="total-revenue-chart" data-colors='["--bs-primary"]'></div> --}}
+                    </div>
+                    <div>
+                        <h4 class="mb-1 mt-1">Tabel 1</h4>
+                        <p class="text-muted mb-0">Kerjasama Pengabdian Kepada Masyarakat</p>
+                        <span class="badge bg-info">{{ $tabel_1_3 }}</span>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="mb-1 mt-1">Tabel 1</h4>
-                    <p class="text-muted mb-0">Kerjasama Pengabdian Kepada Masyarakat</p>
-                    <span class="badge bg-info">{{ $tabel_1_3 }}</span>
-                </div>
-            </div>
             </a>
         </div>
     </div> <!-- end col-->
@@ -129,7 +129,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-a-3.index') }}">
@@ -146,7 +146,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-a-4.index') }}">
@@ -163,7 +163,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-a-5.index') }}">
@@ -180,7 +180,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-1.index') }}">
@@ -197,7 +197,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-2.index') }}">
@@ -214,7 +214,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-3.index') }}">
@@ -231,7 +231,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-4-1.index') }}">
@@ -248,7 +248,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-4-2.index') }}">
@@ -265,7 +265,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-5.index') }}">
@@ -282,7 +282,7 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
+
     <div class="col-md-6 col-xl-3">
         <div class="card">
             <a href="{{ route('tabel-3-b-6.index') }}">
