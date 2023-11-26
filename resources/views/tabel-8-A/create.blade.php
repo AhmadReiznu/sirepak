@@ -18,6 +18,17 @@ IPK Lulusan
             <form action="{{ route('tabel-8-a.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data IPK Lulusan</h4>
                     <div class="mb-3 row">
                         <label for="tahun_lulus" class="col-md-2 col-form-label">Tahun Lulus</label>
@@ -51,7 +62,7 @@ IPK Lulusan
                             <input class="form-control" type="number" name="ipk_maks" id="ipk_maks">
                         </div>
                     </div>
-                    
+
 
                     <button type="submit" class="btn btn-success">Tambah</button>
                     <button class="btn btn-danger">

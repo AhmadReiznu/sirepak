@@ -19,6 +19,17 @@ Integrasi Kegiatan Penelitian/PkM dalam Pembelajaran
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Integrasi Kegiatan Penelitian/PkM dalam Pembelajaran</h4>
                     <div class="mb-3 row">
                         <label for="judul_penelitian_pkm" class="col-md-2 col-form-label">Judul Penelitian/PkM</label>
@@ -26,7 +37,7 @@ Integrasi Kegiatan Penelitian/PkM dalam Pembelajaran
                             <input class="form-control" type="text" value="{{ $tabel_5_b->judul_penelitian_pkm }}" name="judul_penelitian_pkm" id="judul_penelitian_pkm">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Nama Dosen</label>
                         <div class="col-md-10">

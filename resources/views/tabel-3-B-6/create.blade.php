@@ -18,6 +18,17 @@ Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
             <form action="{{ route('tabel-3-b-6.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Nama Dosen</label>
@@ -25,7 +36,7 @@ Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
                             <input class="form-control" type="text" name="nama_dosen" id="nama_dosen">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="nama_produk_jasa" class="col-md-2 col-form-label">Nama Produk/Jasa</label></label>
                         <div class="col-md-10">
@@ -46,7 +57,7 @@ Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
                             <input class="form-control" type="file" name="bukti" id="bukti">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="tahun" class="col-md-2 col-form-label">Tahun</label></label>
                         <div class="col-md-10">

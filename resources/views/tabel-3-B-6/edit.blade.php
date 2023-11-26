@@ -19,6 +19,17 @@ Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Nama Dosen</label>
@@ -26,7 +37,7 @@ Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
                             <input class="form-control" type="text" value="{{ $tabel_3_b_6->nama_dosen }}" name="nama_dosen" id="nama_dosen">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="nama_produk_jasa" class="col-md-2 col-form-label">Nama Produk/Jasa</label></label>
                         <div class="col-md-10">
@@ -49,7 +60,7 @@ Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
                             <input type="hidden" name="current_document" value="{{ $tabel_3_b_6->bukti }}" id="bukti">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="tahun" class="col-md-2 col-form-label">Tahun</label></label>
                         <div class="col-md-10">

@@ -18,6 +18,17 @@ Masa Studi Lulusan
             <form action="{{ route('tabel-8-c-1.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Masa Studi Lulusan</h4>
                     <span class="badge bg-danger">Diisi oleh pengusul dari Program Studi pada Program Diploma Tiga</span>
                     <div class="mb-3 row">
@@ -32,14 +43,14 @@ Masa Studi Lulusan
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_mahasiswa_diterima" class="col-md-2 col-form-label">Jumlah Mahasiswa Diterima</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" name="jumlah_mahasiswa_diterima" id="jumlah_mahasiswa_diterima">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Jumlah Mahasiswa Yang Lulus</span>
                     <div class="mb-3 row">
                         <label for="jml_akhir_ts_4" class="col-md-2 col-form-label">Akhir TS-4</label>

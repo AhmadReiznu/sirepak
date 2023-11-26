@@ -18,6 +18,17 @@ Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
             <form action="{{ route('tabel-5-a.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Kode Mata Kuliah</label>
@@ -25,7 +36,7 @@ Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
                             <input class="form-control" type="text" name="nama_dosen" id="nama_dosen">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="bidang_keahlian" class="col-md-2 col-form-label">Bidang Keahlian</label>
                         <div class="col-md-10">

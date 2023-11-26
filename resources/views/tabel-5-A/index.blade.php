@@ -22,11 +22,11 @@ Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="data-table table table-striped table-bordered dt-responsive nowrap"
-                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table class="data-table table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th rowspan="2" class="text-center">No</th>
+                                <th rowspan="2" class="text-center">Semester</th>
                                 <th rowspan="2" class="text-center">Kode Mata Kuliah</th>
                                 <th rowspan="2" class="text-center">Nama Mata Kuliah</th>
                                 <th rowspan="2" class="text-center">Mata Kuliah Kompetensi</th>
@@ -48,7 +48,7 @@ Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -84,6 +84,10 @@ Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
                 {
                     data: 'kode_mata_kuliah',
                     name: 'kode_mata_kuliah'
+                },
+                {
+                    data: 'nama_mata_kuliah',
+                    name: 'nama_mata_kuliah'
                 },
                 {
                     data: 'mata_kuliah_kompetensi',

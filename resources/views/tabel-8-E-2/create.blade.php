@@ -18,15 +18,26 @@ Kepuasan Pengguna Lulusan
             <form action="{{ route('tabel-8-e-2.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Kepuasan Pengguna Lulusan</h4>
-                    
+
                     <div class="mb-3 row">
                         <label for="jenis_kemampuan" class="col-md-2 col-form-label">Jenis Kemampuan</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" name="jenis_kemampuan" id="jenis_kemampuan">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Tingkat Kepuasan Pengguna (%)</span>
                     <div class="mb-3 row">
                         <label for="tkp_sangat_baik" class="col-md-2 col-form-label">Sangat Baik</label>

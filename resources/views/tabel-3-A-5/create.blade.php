@@ -18,6 +18,17 @@ Dosen Industri/Praktisi
             <form action="{{ route('tabel-3-a-5.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Dosen Industri/Praktisi</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen_industri" class="col-md-2 col-form-label">Nama Dosen Industri</label>
@@ -25,7 +36,7 @@ Dosen Industri/Praktisi
                             <input class="form-control" type="text" name="nama_dosen_industri" id="nama_dosen_industri">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="nidk" class="col-md-2 col-form-label">NIDK</label>
                         <div class="col-md-10">
@@ -53,7 +64,7 @@ Dosen Industri/Praktisi
                             <input class="form-control" type="text" name="bidang_keahlian" id="bidang_keahlian">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="sertifikat_profesi" class="col-md-2 col-form-label">Sertifikat Profesi/Kompetensi/Industri</label>
                         <div class="col-md-10">
@@ -67,7 +78,7 @@ Dosen Industri/Praktisi
                             <input class="form-control" type="text" name="mata_kuliah_yang_diampu" id="mata_kuliah_yang_diampu">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="sks" class="col-md-2 col-form-label">Bobot Kredit (sks)</label>
                         <div class="col-md-10">

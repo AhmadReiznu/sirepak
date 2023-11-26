@@ -18,6 +18,17 @@ Kerjasama Pengabdian Masyarakat
             <form action="{{ route('tabel-1-3.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Kerjasama Pengabdian Masyarakat</h4>
 
                     <div class="mb-3 mt-3 row">

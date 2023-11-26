@@ -18,8 +18,19 @@ Luaran Penelitian/PkM yang Dihasilkan Mahasiswa
             <form action="{{ route('tabel-8-f-4-2.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Luaran Penelitian/PkM yang Dihasilkan Mahasiswa</h4>
-                    
+
                     <div class="mb-3 row">
                         <label for="luaran_penelitian_dan_pkm" class="col-md-2 col-form-label">Luaran Penelitian dan PkM</label>
                         <div class="col-md-10">

@@ -77,6 +77,7 @@ class Tabel_5_A_Controller extends Controller
             $tabel_5_a = new Tabel_5_A;
             $tabel_5_a->semester = $request->semester;
             $tabel_5_a->kode_mata_kuliah = $request->kode_mata_kuliah;
+            $tabel_5_a->nama_mata_kuliah = $request->nama_mata_kuliah;
             $tabel_5_a->mata_kuliah_kompetensi = $request->mata_kuliah_kompetensi;
             $tabel_5_a->sks_kuliah = $request->sks_kuliah;
             $tabel_5_a->sks_seminar = $request->sks_seminar;
@@ -143,6 +144,7 @@ class Tabel_5_A_Controller extends Controller
             $tabel_5_a = Tabel_5_A::find($id);
             $tabel_5_a->semester = $request->semester;
             $tabel_5_a->kode_mata_kuliah = $request->kode_mata_kuliah;
+            $tabel_5_a->nama_mata_kuliah = $request->nama_mata_kuliah;
             $tabel_5_a->mata_kuliah_kompetensi = $request->mata_kuliah_kompetensi;
             $tabel_5_a->sks_kuliah = $request->sks_kuliah;
             $tabel_5_a->sks_seminar = $request->sks_seminar;

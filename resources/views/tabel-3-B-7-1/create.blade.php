@@ -18,6 +18,17 @@ Luaran Penelitian/PkM Lainnya oleh DTPS
             <form action="{{ route('tabel-3-b-7-1.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Bagian-1 HKI (Paten, Paten Sederhana)</h4>
                     <div class="mb-3 row">
                         <label for="luaran_penelitian_dan_pkm" class="col-md-2 col-form-label">Luaran Penelitian dan PkM</label>
@@ -25,7 +36,7 @@ Luaran Penelitian/PkM Lainnya oleh DTPS
                             <input class="form-control" type="text" name="luaran_penelitian_dan_pkm" id="luaran_penelitian_dan_pkm">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="tahun" class="col-md-2 col-form-label">Tahun</label></label>
                         <div class="col-md-10">

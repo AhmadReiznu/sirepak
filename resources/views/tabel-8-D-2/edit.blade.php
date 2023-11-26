@@ -19,6 +19,17 @@ Kesesuaian Bidang Kerja Lulusan
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Kesesuaian Bidang Kerja Lulusan</h4>
                     <div class="mb-3 row">
                         <label for="tahun_lulus" class="col-md-2 col-form-label">Tahun Lulus</label>
@@ -35,21 +46,21 @@ Kesesuaian Bidang Kerja Lulusan
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan" class="col-md-2 col-form-label">Jumlah Lulusan</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" value="{{ $tabel_8_d_2->jumlah_lulusan }}" name="jumlah_lulusan" id="jumlah_lulusan">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan_yang_terlacak" class="col-md-2 col-form-label">Jumlah Lulusan Yang Terlacak</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" value="{{ $tabel_8_d_2->jumlah_lulusan_yang_terlacak }}" name="jumlah_lulusan_yang_terlacak" id="jumlah_lulusan_yang_terlacak">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Jumlah lulusan Terlacak dengan Tingkat Keseuaian Bidang Kerja</span>
                     <div class="mb-3 row">
                         <label for="jlttkbk_rendah" class="col-md-2 col-form-label">Rendah</label>

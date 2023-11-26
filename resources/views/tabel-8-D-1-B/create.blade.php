@@ -18,6 +18,17 @@ Waktu Tunggu Lulusan
             <form action="{{ route('tabel-8-d-1-b.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Waktu Tunggu Lulusan</h4>
                     <span class="badge bg-danger">Diisi oleh pengusul dari Program Studi pada Program Sarjana</span>
                     <div class="mb-3 row">
@@ -34,27 +45,27 @@ Waktu Tunggu Lulusan
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan" class="col-md-2 col-form-label">Jumlah Lulusan</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" name="jumlah_lulusan" id="jumlah_lulusan">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan_yang_terlacak" class="col-md-2 col-form-label">Jumlah Lulusan Yang Terlacak</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" name="jumlah_lulusan_yang_terlacak" id="jumlah_lulusan_yang_terlacak">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Jumlah Lulusan Terlacak dengan Waktu Tunggu Mendapatkan Pekerjaan </span>
                     <div class="mb-3 row">
                         <label for="jltwtmp_wt_6_bulan" class="col-md-2 col-form-label">WT < 6 bulan</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="number" name="jltwtmp_wt_6_bulan" id="jltwtmp_wt_6_bulan">
-                        </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="number" name="jltwtmp_wt_6_bulan" id="jltwtmp_wt_6_bulan">
+                                </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="jltwtmp_6_wt_18_bulan" class="col-md-2 col-form-label">6 ≤ WT ≤ 18 bulan</label>

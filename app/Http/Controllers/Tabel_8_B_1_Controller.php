@@ -66,7 +66,6 @@ class Tabel_8_B_1_Controller extends Controller
         // dd($request->all());
         $rules = [
             'nama_kegiatan' => 'required',
-            'waktu_perolehan' => 'required',
             'tingkat' => 'required',
             'prestasi_yang_dicapai' => 'required',
         ];
@@ -130,7 +129,6 @@ class Tabel_8_B_1_Controller extends Controller
             // update
             $tabel_8_b_1 = Tabel_8_B_1::find($id);
             $tabel_8_b_1->nama_kegiatan = $request->nama_kegiatan;
-            $tabel_8_b_1->waktu_perolehan = $request->waktu_perolehan;
             $tabel_8_b_1->tingkat = $request->tingkat;
             $tabel_8_b_1->prestasi_yang_dicapai = $request->prestasi_yang_dicapai;
             $tabel_8_b_1->save();

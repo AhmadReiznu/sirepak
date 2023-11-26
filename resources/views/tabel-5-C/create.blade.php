@@ -18,6 +18,17 @@ Kepuasan Mahasiswa
             <form action="{{ route('tabel-5-c.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Kepuasan Mahasiswa</h4>
                     <div class="mb-3 row">
                         <label for="aspek_yang_diukur" class="col-md-2 col-form-label">Aspek yang Diukur</label>
@@ -25,30 +36,30 @@ Kepuasan Mahasiswa
                             <textarea class="form-control" name="aspek_yang_diukur" id="aspek_yang_diukur" cols="30" rows="10"></textarea>
                         </div>
                     </div>
-                    
+
                     <p class="badge bg-info">Tingkat Kepuasan Mahasiswa</p>
                     <div class="mb-3 row">
                         <label for="tkm_sangat_baik" class="col-md-2 col-form-label">Sangat Baik</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="number" max="100" name="tkm_sangat_baik" id="tkm_sangat_baik">
+                            <input class="form-control" type="number" step="0.01" name="tkm_sangat_baik" id="tkm_sangat_baik">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="tkm_baik" class="col-md-2 col-form-label">Baik</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="number" max="100" name="tkm_baik" id="tkm_baik">
+                            <input class="form-control" type="number" step="0.01" name="tkm_baik" id="tkm_baik">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="tkm_cukup" class="col-md-2 col-form-label">Cukup</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="number" max="100" name="tkm_cukup" id="tkm_cukup">
+                            <input class="form-control" type="number" step="0.01" name="tkm_cukup" id="tkm_cukup">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="tkm_kurang" class="col-md-2 col-form-label">Kurang</label>
                         <div class="col-md-10">
-                            <input class="form-control" type="number" max="100" name="tkm_kurang" id="tkm_kurang">
+                            <input class="form-control" type="number" step="0.01" name="tkm_kurang" id="tkm_kurang">
                         </div>
                     </div>
 

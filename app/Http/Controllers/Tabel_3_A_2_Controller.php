@@ -87,7 +87,7 @@ class Tabel_3_A_2_Controller extends Controller
                     $request->jumlah_mahasiswa_yang_dibimbing_pada_ps_lain_di_pt_ts_1 +
                     $request->jumlah_mahasiswa_yang_dibimbing_pada_ps_lain_di_pt_ts
                 ) / 3;
-            $tabel_3_a_2->rata_rata_jumlah_bimbingan_di_semua_program_semester = ($request->rata_rata_1 + $request->rata_rata_1) / 2;
+            $tabel_3_a_2->rata_rata_jumlah_bimbingan_di_semua_program_semester = ($tabel_3_a_2->rata_rata_1 + $tabel_3_a_2->rata_rata_2) / 2;
             $tabel_3_a_2->save();
 
             // redirect
@@ -120,7 +120,7 @@ class Tabel_3_A_2_Controller extends Controller
     {
         // dd($request->all());
         $rules = [
-            'nama_dosen' => 'required|integer',
+            'nama_dosen' => 'required',
             'jumlah_mahasiswa_yang_dibimbing_pada_ps_yang_diakreditasi_ts_2' => 'required|integer',
             'jumlah_mahasiswa_yang_dibimbing_pada_ps_yang_diakreditasi_ts_1' => 'required|integer',
             'jumlah_mahasiswa_yang_dibimbing_pada_ps_yang_diakreditasi_ts' => 'required|integer',
@@ -154,7 +154,7 @@ class Tabel_3_A_2_Controller extends Controller
                     $request->jumlah_mahasiswa_yang_dibimbing_pada_ps_lain_di_pt_ts_1 +
                     $request->jumlah_mahasiswa_yang_dibimbing_pada_ps_lain_di_pt_ts
                 ) / 3;
-            $tabel_3_a_2->rata_rata_jumlah_bimbingan_di_semua_program_semester = ($request->rata_rata_1 + $request->rata_rata_1) / 2;
+            $tabel_3_a_2->rata_rata_jumlah_bimbingan_di_semua_program_semester = ($tabel_3_a_2->rata_rata_1 + $tabel_3_a_2->rata_rata_2) / 2;
             $tabel_3_a_2->save();
 
             // redirect

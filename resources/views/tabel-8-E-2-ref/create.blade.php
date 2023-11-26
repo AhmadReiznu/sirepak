@@ -18,15 +18,26 @@ Kepuasan Pengguna Lulusan
             <form action="{{ route('tabel-ref-8-e-2.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Kepuasan Pengguna Lulusan</h4>
-                    
+
                     <div class="mb-3 row">
                         <label for="tahun_lulus" class="col-md-2 col-form-label">Tahun Lulus</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" name="tahun_lulus" id="tahun_lulus">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan" class="col-md-2 col-form-label">Jumlah Lulusan</label>
                         <div class="col-md-10">

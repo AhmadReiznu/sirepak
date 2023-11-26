@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tabel_1_2;
 use App\Models\Tabel_1_3;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -95,15 +94,15 @@ class Tabel_1_3_Controller extends Controller
             $document_file->move('dokumen/', $document_name);
 
             // store
-            $tabel_1_2 = new Tabel_1_2;
-            $tabel_1_2->lembaga_mitra = $request->lembaga_mitra;
-            $tabel_1_2->tingkat = $request->tingkat;
-            $tabel_1_2->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
-            $tabel_1_2->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
-            $tabel_1_2->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
-            $tabel_1_2->bukti_kerjasama = $document_name;
-            $tabel_1_2->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
-            $tabel_1_2->save();
+            $tabel_1_3 = new Tabel_1_3;
+            $tabel_1_3->lembaga_mitra = $request->lembaga_mitra;
+            $tabel_1_3->tingkat = $request->tingkat;
+            $tabel_1_3->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
+            $tabel_1_3->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
+            $tabel_1_3->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
+            $tabel_1_3->bukti_kerjasama = $document_name;
+            $tabel_1_3->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
+            $tabel_1_3->save();
 
             // redirect
             Session::flash('message', 'Successfully created!');
@@ -133,7 +132,7 @@ class Tabel_1_3_Controller extends Controller
     public function update(Request $request, string $id)
     {
         // dd($request->all());
-        $tabel_1_2 = Tabel_1_2::find($id);
+        $tabel_1_3 = Tabel_1_3::find($id);
         $rules = [
             'lembaga_mitra' => 'required',
             'tingkat' => 'required',
@@ -153,7 +152,7 @@ class Tabel_1_3_Controller extends Controller
         } else {
             // Upload document
             if ($request->hasFile('bukti_kerjasama')) {
-                $path = 'dokumen/' . $tabel_1_2->bukti_kerjasama;
+                $path = 'dokumen/' . $tabel_1_3->bukti_kerjasama;
                 if (File::exists($path)) {
                     File::delete($path);
                 }
@@ -165,14 +164,14 @@ class Tabel_1_3_Controller extends Controller
             }
 
             // update
-            $tabel_1_2->lembaga_mitra = $request->lembaga_mitra;
-            $tabel_1_2->tingkat = $request->tingkat;
-            $tabel_1_2->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
-            $tabel_1_2->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
-            $tabel_1_2->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
-            $tabel_1_2->bukti_kerjasama = $document_name;
-            $tabel_1_2->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
-            $tabel_1_2->save();
+            $tabel_1_3->lembaga_mitra = $request->lembaga_mitra;
+            $tabel_1_3->tingkat = $request->tingkat;
+            $tabel_1_3->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
+            $tabel_1_3->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
+            $tabel_1_3->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
+            $tabel_1_3->bukti_kerjasama = $document_name;
+            $tabel_1_3->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
+            $tabel_1_3->save();
 
             // redirect
             Session::flash('message', 'Successfully created!');
@@ -185,12 +184,12 @@ class Tabel_1_3_Controller extends Controller
      */
     public function destroy(string $id)
     {
-        $tabel_1_2 = Tabel_1_2::find($id);
-        $path = 'dokumen/' . $tabel_1_2->bukti_kerjasama;
+        $tabel_1_3 = Tabel_1_3::find($id);
+        $path = 'dokumen/' . $tabel_1_3->bukti_kerjasama;
         if (File::exists($path)) {
             File::delete($path);
         }
-        $tabel_1_2->delete();
+        $tabel_1_3->delete();
 
         // redirect
         Session::flash('message', 'Successfully deleted!');

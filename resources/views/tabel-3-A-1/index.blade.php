@@ -22,8 +22,7 @@ Dosen Tetap Perguruan Tinggi
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="data-table table table-striped table-bordered dt-responsive nowrap"
-                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table class="data-table table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th rowspan="2">No</th>
@@ -46,7 +45,7 @@ Dosen Tetap Perguruan Tinggi
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -98,7 +97,7 @@ Dosen Tetap Perguruan Tinggi
                 {
                     data: 'kesesuaian_dengan_kompetensi_inti_ps',
                     name: 'kesesuaian_dengan_kompetensi_inti_ps',
-                        render: function(data, type, row) {
+                    render: function(data, type, row) {
                         return data == 1 ? 'V' : '-';
                     }
                 },
@@ -120,7 +119,10 @@ Dosen Tetap Perguruan Tinggi
                 },
                 {
                     data: 'kesesuaian_bidang_keahlian_dengan_mata_kuliah_yang_diampu',
-                    name: 'kesesuaian_bidang_keahlian_dengan_mata_kuliah_yang_diampu'
+                    name: 'kesesuaian_bidang_keahlian_dengan_mata_kuliah_yang_diampu',
+                    render: function(data, type, row) {
+                        return data == 1 ? 'V' : '-';
+                    }
                 },
                 {
                     data: 'mata_kuliah_yang_diampu_pada_ps_lain',

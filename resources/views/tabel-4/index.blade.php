@@ -22,8 +22,7 @@ Penggunaan Dana
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="data-table table table-striped table-bordered dt-responsive nowrap"
-                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table class="data-table table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th rowspan="2" class="text-center">No</th>
@@ -44,7 +43,7 @@ Penggunaan Dana
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -80,57 +79,89 @@ Penggunaan Dana
                 {
                     data: 'unit_pengelola_program_studi_ts_2',
                     name: 'unit_pengelola_program_studi_ts_2',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'unit_pengelola_program_studi_ts_1',
                     name: 'unit_pengelola_program_studi_ts_1',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'unit_pengelola_program_studi_ts',
                     name: 'unit_pengelola_program_studi_ts',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'rata_rata_1',
                     name: 'rata_rata_1',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'program_studi_ts_2',
                     name: 'program_studi_ts_2',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'program_studi_ts_1',
                     name: 'program_studi_ts_1',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'program_studi_ts',
                     name: 'program_studi_ts',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {
                     data: 'rata_rata_2',
                     name: 'rata_rata_2',
-                    render: function (data) {
-                        return 'Rp ' + numberWithCommas(data);
+                    render: function(data) {
+                        if (data != null) {
+                            return 'Rp ' + numberWithCommas(data);
+                        } else {
+                            return 'Rp 0'
+                        }
                     }
                 },
                 {

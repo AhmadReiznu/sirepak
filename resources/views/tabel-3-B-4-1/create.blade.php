@@ -18,6 +18,17 @@ Publikasi Ilmiah DTPS
             <form action="{{ route('tabel-3-b-4-1.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Publikasi Ilmiah DTPS</h4>
                     <div class="mb-3 row">
                         <label for="jenis_publikasi" class="col-md-2 col-form-label">Jenis Publikasi</label>
@@ -25,7 +36,7 @@ Publikasi Ilmiah DTPS
                             <input class="form-control" type="text" name="jenis_publikasi" id="jenis_publikasi">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_judul_ts_2" class="col-md-2 col-form-label">TS-2</label></label>
                         <div class="col-md-10">

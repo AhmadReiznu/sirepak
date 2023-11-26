@@ -54,9 +54,6 @@ class Tabel_3_B_2_Controller extends Controller
         // dd($request->all());
         $rules = [
             'sumber_pembiayaan' => 'required',
-            'jumlah_judul_penelitian_ts_2' => 'required|integer',
-            'jumlah_judul_penelitian_ts_1' => 'required|integer',
-            'jumlah_judul_penelitian_ts' => 'required|integer',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -108,9 +105,6 @@ class Tabel_3_B_2_Controller extends Controller
         // dd($request->all());
         $rules = [
             'sumber_pembiayaan' => 'required',
-            'jumlah_judul_penelitian_ts_2' => 'required|integer',
-            'jumlah_judul_penelitian_ts_1' => 'required|integer',
-            'jumlah_judul_penelitian_ts' => 'required|integer',
         ];
 
         $validator = Validator::make($request->all(), $rules);

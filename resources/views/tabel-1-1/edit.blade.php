@@ -19,65 +19,78 @@ Kerjasama Pendidikan
                 @csrf
                 @method('PUT')
                 <div class="card-body">
-                    <h4 class="card-title">Ubah Data Kerjasama Pendidikan</h4>
-
-                    <div class="mb-3 mt-3 row">
-                        <label for="lembaga_mitra" class="col-md-2 col-form-label">Lembaga</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" name="lembaga_mitra" value="{{ $tabel_1_1->lembaga_mitra }}" id="lembaga">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="example-search-input" class="col-md-2 col-form-label">Tingkat</label>
-                        <div class="col-md-10">
-                            <select name="tingkat" class="form-select">
-                                <option value="{{ $tabel_1_1->tingkat }}">{{ $tabel_1_1->tingkat }}</option>
-                                <option value="lokal">Lokal</option>
-                                <option value="nasional">Nasional</option>
-                                <option value="internasional">Internasional</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="judul_kegiatan" class="col-md-2 col-form-label">Judul Kegiatan Kerjasama</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" value="{{ $tabel_1_1->judul_kegiatan_kerjasama }}" name="judul_kegiatan_kerjasama" id="judul_kegiatan">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="manfaat_ps" class="col-md-2 col-form-label">Manfaat bagi PS yang Diakreditasi</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="text" name="manfaat_bagi_ps_yang_diakreditasi" value="{{ $tabel_1_1->manfaat_bagi_ps_yang_diakreditasi }}" id="manfaat_ps">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="waktu_durasi" class="col-md-2 col-form-label">Waktu & Durasi</label>
-                        <div class="col-md-10">
-                            <div class="input-group">
-                                <input type="number" class="form-control" name="waktu_dan_durasi" value="{{ $tabel_1_1->waktu_dan_durasi }}" id="waktu_durasi">
-                                <div class="input-group-text">Tahun</div>
+                    @csrf
+                    <div class="card-body">
+                        @if(count($errors) > 0)
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                    <div>{{ $error }}</div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="bukti_kerjasama" class="col-md-2 col-form-label">Bukti Kerjasama</label>
-                        <div class="col-md-10">
-                            <p>File yang sudah diunggah : </p><span>{{ asset('dokumen/'.$tabel_1_1->bukti_kerjasama) }}</span>
-                            <input class="form-control" type="file" name="bukti_kerjasama" value="" id="bukti_kerjasama">
-                            <input type="hidden" name="current_document" value="{{ $tabel_1_1->bukti_kerjasama }}" id="bukti_kerjasama">
+                        @endif
+                        <h4 class="card-title">Ubah Data Kerjasama Pendidikan</h4>
+
+                        <div class="mb-3 mt-3 row">
+                            <label for="lembaga_mitra" class="col-md-2 col-form-label">Lembaga</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" name="lembaga_mitra" value="{{ $tabel_1_1->lembaga_mitra }}" id="lembaga">
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="tahun_akhir_kerjasama" class="col-md-2 col-form-label">Tahun Berakhirnya Kerjasama</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="date" name="tahun_berakhirnya_kerjasama" value="{{ $tabel_1_1->tahun_berakhirnya_kerjasama }}" id="tahun_akhir_kerjasama">
+                        <div class="mb-3 row">
+                            <label for="example-search-input" class="col-md-2 col-form-label">Tingkat</label>
+                            <div class="col-md-10">
+                                <select name="tingkat" class="form-select">
+                                    <option value="{{ $tabel_1_1->tingkat }}">{{ $tabel_1_1->tingkat }}</option>
+                                    <option value="lokal">Lokal</option>
+                                    <option value="nasional">Nasional</option>
+                                    <option value="internasional">Internasional</option>
+                                </select>
+                            </div>
                         </div>
+                        <div class="mb-3 row">
+                            <label for="judul_kegiatan" class="col-md-2 col-form-label">Judul Kegiatan Kerjasama</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" value="{{ $tabel_1_1->judul_kegiatan_kerjasama }}" name="judul_kegiatan_kerjasama" id="judul_kegiatan">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="manfaat_ps" class="col-md-2 col-form-label">Manfaat bagi PS yang Diakreditasi</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" name="manfaat_bagi_ps_yang_diakreditasi" value="{{ $tabel_1_1->manfaat_bagi_ps_yang_diakreditasi }}" id="manfaat_ps">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="waktu_durasi" class="col-md-2 col-form-label">Waktu & Durasi</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" name="waktu_dan_durasi" value="{{ $tabel_1_1->waktu_dan_durasi }}" id="waktu_durasi">
+                                    <div class="input-group-text">Tahun</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="bukti_kerjasama" class="col-md-2 col-form-label">Bukti Kerjasama</label>
+                            <div class="col-md-10">
+                                <p>File yang sudah diunggah : </p><span>{{ asset('dokumen/'.$tabel_1_1->bukti_kerjasama) }}</span>
+                                <input class="form-control" type="file" name="bukti_kerjasama" value="" id="bukti_kerjasama">
+                                <input type="hidden" name="current_document" value="{{ $tabel_1_1->bukti_kerjasama }}" id="bukti_kerjasama">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="tahun_akhir_kerjasama" class="col-md-2 col-form-label">Tahun Berakhirnya Kerjasama</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="date" name="tahun_berakhirnya_kerjasama" value="{{ $tabel_1_1->tahun_berakhirnya_kerjasama }}" id="tahun_akhir_kerjasama">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Ubah</button>
+                        <button class="btn btn-danger">
+                            <a href="{{ route('tabel-1-1.index') }}" class="text-white">Batal</a>
+                        </button>
                     </div>
-                    <button type="submit" class="btn btn-success">Ubah</button>
-                    <button class="btn btn-danger">
-                        <a href="{{ route('tabel-1-1.index') }}" class="text-white">Batal</a>
-                    </button>
-                </div>
             </form>
         </div>
     </div> <!-- end col -->

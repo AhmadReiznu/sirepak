@@ -19,6 +19,17 @@ Kepuasan Pengguna Lulusan
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Kepuasan Pengguna Lulusan</h4>
                     <div class="mb-3 row">
                         <label for="tahun_lulus" class="col-md-2 col-form-label">Tahun Lulus</label>
@@ -26,7 +37,7 @@ Kepuasan Pengguna Lulusan
                             <input class="form-control" type="number" value="{{ $tabel_ref_8_e_2->tahun_lulus }}" name="tahun_lulus" id="tahun_lulus">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan" class="col-md-2 col-form-label">Jumlah Lulusan</label>
                         <div class="col-md-10">

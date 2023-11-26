@@ -14,6 +14,7 @@ class Tabel_5_A extends Model
     protected $fillable = [
         'semester',
         'kode_mata_kuliah',
+        'nama_mata_kuliah',
         'mata_kuliah_kompetensi',
         'sks_kuliah',
         'sks_seminar',

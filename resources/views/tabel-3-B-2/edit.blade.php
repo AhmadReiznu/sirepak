@@ -19,16 +19,27 @@ Penelitian DTPS
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Penelitian DTPS</h4>
                     <div class="mb-3 row">
                         <label for="sumber_pembiayaan" class="col-md-2 col-form-label">Sumber Pembiayaan</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="sumber_pembiayaan" id="sumber_pembiayaan" cols="30" rows="10">
-                                {{ $tabel_3_b_2->sumber_pembiayaan }}
+                            {{ $tabel_3_b_2->sumber_pembiayaan }}
                             </textarea>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_judul_penelitian_ts_2" class="col-md-2 col-form-label">TS-2</label></label>
                         <div class="col-md-10">

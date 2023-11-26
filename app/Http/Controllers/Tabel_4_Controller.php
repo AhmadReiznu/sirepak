@@ -54,12 +54,6 @@ class Tabel_4_Controller extends Controller
         // dd($request->all());
         $rules = [
             'jenis_penggunaan' => 'required',
-            'unit_pengelola_program_studi_ts_2' => 'required',
-            'unit_pengelola_program_studi_ts_1' => 'required',
-            'unit_pengelola_program_studi_ts' => 'required',
-            'program_studi_ts_2' => 'required',
-            'program_studi_ts_1' => 'required',
-            'program_studi_ts' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -158,12 +152,6 @@ class Tabel_4_Controller extends Controller
         // dd($request->all());
         $rules = [
             'jenis_penggunaan' => 'required',
-            'unit_pengelola_program_studi_ts_2' => 'required',
-            'unit_pengelola_program_studi_ts_1' => 'required',
-            'unit_pengelola_program_studi_ts' => 'required',
-            'program_studi_ts_2' => 'required',
-            'program_studi_ts_1' => 'required',
-            'program_studi_ts' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);

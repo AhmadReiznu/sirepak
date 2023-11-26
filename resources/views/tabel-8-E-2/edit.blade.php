@@ -19,6 +19,17 @@ Kepuasan Pengguna Lulusan
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Kepuasan Pengguna Lulusan</h4>
                     <div class="mb-3 row">
                         <label for="jenis_kemampuan" class="col-md-2 col-form-label">Jenis Kemampuan</label>
@@ -26,7 +37,7 @@ Kepuasan Pengguna Lulusan
                             <input class="form-control" type="text" value="{{ $tabel_8_e_2->jenis_kemampuan }}" name="jenis_kemampuan" id="jenis_kemampuan">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Tingkat Kepuasan Pengguna (%)</span>
                     <div class="mb-3 row">
                         <label for="tkp_sangat_baik" class="col-md-2 col-form-label">Sangat Baik</label>

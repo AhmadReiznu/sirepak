@@ -19,6 +19,17 @@ Waktu Tunggu Lulusan
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Waktu Tunggu Lulusan</h4>
                     <div class="mb-3 row">
                         <label for="tahun_lulus" class="col-md-2 col-form-label">Tahun Lulus</label>
@@ -35,34 +46,34 @@ Waktu Tunggu Lulusan
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan" class="col-md-2 col-form-label">Jumlah Lulusan</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" value="{{ $tabel_8_d_1_c->jumlah_lulusan }}" name="jumlah_lulusan" id="jumlah_lulusan">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan_yang_terlacak" class="col-md-2 col-form-label">Jumlah Lulusan Yang Terlacak</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" value="{{ $tabel_8_d_1_c->jumlah_lulusan_yang_terlacak }}" name="jumlah_lulusan_yang_terlacak" id="jumlah_lulusan_yang_terlacak">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_lulusan_yang_dipesan_sebelum_lulus" class="col-md-2 col-form-label">Jumlah Lulusan yang Dipesan Sebelum Lulus</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" value="{{ $tabel_8_d_1_c->jumlah_lulusan_yang_dipesan_sebelum_lulus }}" name="jumlah_lulusan_yang_dipesan_sebelum_lulus" id="jumlah_lulusan_yang_dipesan_sebelum_lulus">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Jumlah Lulusan Terlacak dengan Waktu Tunggu Mendapatkan Pekerjaan </span>
                     <div class="mb-3 row">
                         <label for="jltwtmp_wt_3_bulan" class="col-md-2 col-form-label">WT < 3 bulan</label>
-                        <div class="col-md-10">
-                            <input class="form-control" type="number" value="{{ $tabel_8_d_1_c->jltwtmp_wt_3_bulan }}" name="jltwtmp_wt_3_bulan" id="jltwtmp_wt_3_bulan">
-                        </div>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="number" value="{{ $tabel_8_d_1_c->jltwtmp_wt_3_bulan }}" name="jltwtmp_wt_3_bulan" id="jltwtmp_wt_3_bulan">
+                                </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="jltwtmp_3_wt_6_bulan" class="col-md-2 col-form-label">3 ≤ WT ≤ 6 bulan</label>

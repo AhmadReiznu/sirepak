@@ -18,6 +18,17 @@ Karya Ilmiah DTPS yang Disitasi
             <form action="{{ route('tabel-3-b-5.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Tambah Data Karya Ilmiah DTPS yang Disitasi</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Nama Dosen</label>
@@ -25,7 +36,7 @@ Karya Ilmiah DTPS yang Disitasi
                             <input class="form-control" type="text" name="nama_dosen" id="nama_dosen">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="judul_artikel_yang_disitasi" class="col-md-2 col-form-label">Judul Artikel yang Disitasi (Jurnal, Volume, Tahun, Nomor, Halaman)</label></label>
                         <div class="col-md-10">

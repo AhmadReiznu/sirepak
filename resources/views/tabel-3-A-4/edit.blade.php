@@ -19,6 +19,17 @@ Dosen Tidak Tetap
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Dosen Tidak Tetap</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Nama Dosen</label>
@@ -26,7 +37,7 @@ Dosen Tidak Tetap
                             <input class="form-control" type="text" value="{{ $tabel_3_a_4->nama_dosen }}" name="nama_dosen" id="nama_dosen">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="nidn" class="col-md-2 col-form-label">NIDN/NIDK</label>
                         <div class="col-md-10">
@@ -61,7 +72,7 @@ Dosen Tidak Tetap
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="sertifikat_pendidik_profesional" class="col-md-2 col-form-label">Sertifikat Pendidik Profesional</label>
                         <div class="col-md-10">
@@ -70,7 +81,7 @@ Dosen Tidak Tetap
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="sertifikat_kompetensi" class="col-md-2 col-form-label">Sertifikat  Kompetensi/Profesi/Industri</label>
+                        <label for="sertifikat_kompetensi" class="col-md-2 col-form-label">Sertifikat Kompetensi/Profesi/Industri</label>
                         <div class="col-md-10">
                             <input class="form-control" type="text" value="{{ $tabel_3_a_4->sertifikat_kompetensi }}" name="sertifikat_kompetensi" id="sertifikat_kompetensi">
                         </div>

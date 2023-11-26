@@ -19,6 +19,17 @@ Masa Studi Lulusan
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Masa Studi Lulusan</h4>
                     <div class="mb-3 row">
                         <label for="tahun_masuk" class="col-md-2 col-form-label">Tahun Masuk</label>
@@ -33,14 +44,14 @@ Masa Studi Lulusan
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="jumlah_mahasiswa_diterima" class="col-md-2 col-form-label">Jumlah Mahasiswa Diterima</label>
                         <div class="col-md-10">
                             <input class="form-control" type="number" value="{{ $tabel_8_c_1->jumlah_mahasiswa_diterima }}" name="jumlah_mahasiswa_diterima" id="jumlah_mahasiswa_diterima">
                         </div>
                     </div>
-                    
+
                     <span class="badge bg-info">Jumlah Mahasiswa Yang Lulus</span>
                     <div class="mb-3 row">
                         <label for="jml_akhir_ts_4" class="col-md-2 col-form-label">Akhir TS-4</label>

@@ -19,6 +19,17 @@ Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
                 @csrf
                 @method('PUT')
                 <div class="card-body">
+                    @if(count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <h4 class="card-title">Ubah Data Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi</h4>
                     <div class="mb-3 row">
                         <label for="nama_dosen" class="col-md-2 col-form-label">Nama Dosen</label>
@@ -58,7 +69,7 @@ Ekuivalen Waktu Mengajar Penuh (EWMP) Dosen Tetap Perguruan Tinggi
                             <input class="form-control" type="number" value="{{ $tabel_3_a_3->ewmp_pendidikan_ps_lain_di_luar_pt }}" name="ewmp_pendidikan_ps_lain_di_luar_pt" id="ewmp_pendidikan_ps_lain_di_luar_pt">
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <label for="ewmp_penelitian" class="col-md-2 col-form-label">Penelitian</label>
                         <div class="col-md-10">
