@@ -286,15 +286,23 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="lain_lain" role="button">
-                                <i class="uil-layers me-2"></i>Lain-Lain <div class="arrow-down"></div>
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_4" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 4 <div class="arrow-down"></div>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="lain_lain">
+                            <div class="dropdown-menu" aria-labelledby="tabel_4">
                                 <div class="dropdown">
                                     <a class="dropdown-item {{ request()->is('tabel-4') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-4.index') }}" role="button">
                                         Penggunaan Dana
                                     </a>
                                 </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_5" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 5 <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="tabel_5">
                                 <div class="dropdown">
                                     <a class="dropdown-item {{ request()->is('tabel-5-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-5-a.index') }}" role="button">
                                         Kurikulum, Capaian Pembelajaran, dan Rencana Pembelajaran
@@ -310,6 +318,14 @@
                                         Kepuasan Mahasiswa
                                     </a>
                                 </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_6" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 6 <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="tabel_6">
                                 <div class="dropdown">
                                     <a class="dropdown-item {{ request()->is('tabel-6-a') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-6-a.index') }}" role="button">
                                         Penelitian DTPS yang Melibatkan Mahasiswa
@@ -320,6 +336,14 @@
                                         Penelitian DTPS yang Menjadi Rujukan Tema Tesis/Disertasi
                                     </a>
                                 </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="tabel_7" role="button">
+                                <i class="uil-layers me-2"></i>Tabel 7 <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="tabel_7">
                                 <div class="dropdown">
                                     <a class="dropdown-item {{ request()->is('tabel-7') ? 'bg-primary text-white' : '' }}" href="{{ route('tabel-7.index') }}" role="button">
                                         PkM DTPS yang Melibatkan Mahasiswa

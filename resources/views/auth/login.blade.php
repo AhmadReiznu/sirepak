@@ -8,11 +8,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="text-center">
+                    <div class="mb-5 d-block auth-logo">
+                        <img src="{{ URL::asset('/assets/images/logo-vokasi.png') }}" alt="" height="100px" class="logo">
+                        <img src="{{ URL::asset('/assets/images/logo-mi.png') }}" alt="" height="100px" class="logo">
+                    </div>
                     <h3>Login</h3>
-                    {{-- <a href="{{ url('index') }}" class="mb-5 d-block auth-logo">
-                    <img src="{{ URL::asset('/assets/images/logo-dark.png') }}" alt="" height="22" class="logo logo-dark">
-                    <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="22" class="logo logo-light">
-                    </a> --}}
                 </div>
             </div>
         </div>
@@ -22,8 +22,9 @@
 
                     <div class="card-body p-4">
                         <div class="text-center mt-2">
-                            <h5 class="text-primary">Selamat Datang</h5>
-                            <p class="text-muted">Login untuk masuk ke SIREPAK</p>
+                            <img src="{{ URL::asset('/assets/images/logo-ban-pt.png') }}" alt="" height="100px" class="logo">
+                            <h5 class="text-primary mt-3">Selamat Datang di Sistem Repositori Akreditasi</h5>
+                            <p class="text-muted">Login Untuk Melanjutkan</p>
                         </div>
                         <div class="p-2 mt-4">
                             <form method="POST" action="{{ route('login') }}">
@@ -97,12 +98,6 @@
                         </div>
 
                     </div>
-                </div>
-
-                <div class="mt-5 text-center">
-                    <p>© <script>
-                            document.write(new Date().getFullYear())
-                        </script> Minible. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
                 </div>
 
             </div>
