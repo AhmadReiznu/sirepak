@@ -47,7 +47,7 @@ class Tabel_8_B_1_Controller extends Controller
                 ->rawColumns(['lokal', 'nasional', 'internasional', 'action'])
                 ->make(true);
         }
-        return view('tabel-8-b-1.index');
+        return view('tabel-8-B-1.index');
     }
 
     /**
@@ -55,7 +55,7 @@ class Tabel_8_B_1_Controller extends Controller
      */
     public function create()
     {
-        return view('tabel-8-b-1.create');
+        return view('tabel-8-B-1.create');
     }
 
     /**
@@ -104,7 +104,7 @@ class Tabel_8_B_1_Controller extends Controller
     public function edit(string $id)
     {
         $tabel_8_b_1 = Tabel_8_B_1::find($id);
-        return view('tabel-8-b-1.edit', compact('tabel_8_b_1'));
+        return view('tabel-8-B-1.edit', compact('tabel_8_b_1'));
     }
 
     /**

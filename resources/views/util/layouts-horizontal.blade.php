@@ -1,5 +1,3 @@
-
-
 @extends('layouts.master')
 @section('title') @lang('translation.Dashboard') @endsection
 @section('content')

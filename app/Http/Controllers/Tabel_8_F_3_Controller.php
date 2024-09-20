@@ -40,7 +40,7 @@ class Tabel_8_F_3_Controller extends Controller
                 ->rawColumns(['bukti', 'action'])
                 ->make(true);
         }
-        return view('tabel-8-f-3.index');
+        return view('tabel-8-F-3.index');
     }
 
     /**
@@ -48,7 +48,7 @@ class Tabel_8_F_3_Controller extends Controller
      */
     public function create()
     {
-        return view('tabel-8-f-3.create');
+        return view('tabel-8-F-3.create');
     }
 
     /**
@@ -105,7 +105,7 @@ class Tabel_8_F_3_Controller extends Controller
     public function edit(string $id)
     {
         $tabel_8_f_3 = Tabel_8_F_3::find($id);
-        return view('tabel-8-f-3.edit', compact('tabel_8_f_3'));
+        return view('tabel-8-F-3.edit', compact('tabel_8_f_3'));
     }
 
     /**

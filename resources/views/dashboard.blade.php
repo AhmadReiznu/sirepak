@@ -8,8 +8,8 @@
 
 <div class="row">
     <h3>Tabel 1</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-1-1.index') }}">
                 <div class="card-body">
                     <div>
@@ -21,8 +21,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-1-2.index') }}">
                 <div class="card-body">
                     <div>
@@ -34,8 +34,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-8 col-xl-5">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-1-3.index') }}">
                 <div class="card-body">
                     <div>
@@ -50,8 +50,8 @@
 
 <div class="row">
     <h3>Tabel 2</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-2-a.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -66,8 +66,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-2-b.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -85,8 +85,8 @@
 
 <div class="row">
     <h3>Tabel 3</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-a-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -101,8 +101,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-a-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -117,8 +117,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-a-3.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -133,8 +133,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-a-4.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -149,8 +149,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-a-5.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -165,8 +165,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -181,8 +181,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -197,8 +197,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-3.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -213,8 +213,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-4-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -229,8 +229,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-4-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -245,8 +245,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-5.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -261,8 +261,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-6.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -276,9 +276,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-7-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -293,8 +293,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-7-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -308,9 +308,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-7-3.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -324,9 +324,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-3-b-7-4.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -344,8 +344,8 @@
 
 <div class="row">
     <h3>Tabel 4</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-4.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -363,8 +363,8 @@
 
 <div class="row">
     <h3>Tabel 5</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-5-a.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -378,9 +378,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-5-b.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -394,9 +394,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-5-c.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -414,8 +414,8 @@
 
 <div class="row">
     <h3>Tabel 6</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-6-a.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -429,9 +429,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-6-b.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -449,8 +449,8 @@
 
 <div class="row">
     <h3>Tabel 7</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-7.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -468,8 +468,8 @@
 
 <div class="row">
     <h3>Tabel 8</h3>
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-a.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -484,8 +484,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-b-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -500,8 +500,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-b-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -516,8 +516,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-c-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -531,9 +531,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-c-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -547,9 +547,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-c-3.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -563,9 +563,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-c-4.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -580,8 +580,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-d-1-a.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -596,8 +596,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-d-1-b.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -611,9 +611,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-d-1-c.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -628,8 +628,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-e-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -644,8 +644,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-e-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -660,8 +660,8 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-1-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -675,9 +675,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-1-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -691,9 +691,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -707,9 +707,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-3.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -723,9 +723,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-4-1.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -739,9 +739,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-4-2.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -755,9 +755,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-4-3.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -771,9 +771,9 @@
             </a>
         </div>
     </div> <!-- end col-->
-    
-    <div class="col-md-6 col-xl-3">
-        <div class="card">
+
+    <div class="col-md-6 col-xl-3 mb-2">
+        <div class="card h-100">
             <a href="{{ route('tabel-8-f-4-4.index') }}">
                 <div class="card-body">
                     <div class="float-end mt-2">

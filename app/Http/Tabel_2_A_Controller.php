@@ -36,7 +36,7 @@ class Tabel_2_A_Controller extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('tabel-2-A.index');
+        return view('tabel-2-a.index');
     }
 
     /**
@@ -44,7 +44,7 @@ class Tabel_2_A_Controller extends Controller
      */
     public function create()
     {
-        return view('tabel-2-A.create');
+        return view('tabel-2-a.create');
     }
 
     /**

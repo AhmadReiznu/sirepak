@@ -35,7 +35,7 @@ class Tabel_5_C_Controller extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('tabel-5-c.index');
+        return view('tabel-5-C.index');
     }
 
     /**
@@ -43,7 +43,7 @@ class Tabel_5_C_Controller extends Controller
      */
     public function create()
     {
-        return view('tabel-5-c.create');
+        return view('tabel-5-C.create');
     }
 
     /**
@@ -97,7 +97,7 @@ class Tabel_5_C_Controller extends Controller
     public function edit(string $id)
     {
         $tabel_5_c = Tabel_5_C::find($id);
-        return view('tabel-5-c.edit', compact('tabel_5_c'));
+        return view('tabel-5-C.edit', compact('tabel_5_c'));
     }
 
     /**

@@ -40,7 +40,7 @@ class Tabel_3_B_6_Controller extends Controller
                 ->rawColumns(['bukti', 'action'])
                 ->make(true);
         }
-        return view('tabel-3-b-6.index');
+        return view('tabel-3-B-6.index');
     }
 
     /**
@@ -48,7 +48,7 @@ class Tabel_3_B_6_Controller extends Controller
      */
     public function create()
     {
-        return view('tabel-3-b-6.create');
+        return view('tabel-3-B-6.create');
     }
 
     /**

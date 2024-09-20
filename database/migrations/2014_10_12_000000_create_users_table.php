@@ -25,12 +25,13 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
             'role' => 'admin',
-            'email_verified_at' => '2022-01-02 17:04:58',
+            'email_verified_at' => '2024-01-02 17:04:58',
             'created_at' => now(),
         ]);
     }

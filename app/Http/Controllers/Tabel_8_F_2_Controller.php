@@ -35,7 +35,7 @@ class Tabel_8_F_2_Controller extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('tabel-8-f-2.index');
+        return view('tabel-8-F-2.index');
     }
 
     /**
@@ -43,7 +43,7 @@ class Tabel_8_F_2_Controller extends Controller
      */
     public function create()
     {
-        return view('tabel-8-f-2.create');
+        return view('tabel-8-F-2.create');
     }
 
     /**
@@ -91,7 +91,7 @@ class Tabel_8_F_2_Controller extends Controller
     public function edit(string $id)
     {
         $tabel_8_f_2 = Tabel_8_F_2::find($id);
-        return view('tabel-8-f-2.edit', compact('tabel_8_f_2'));
+        return view('tabel-8-F-2.edit', compact('tabel_8_f_2'));
     }
 
     /**
