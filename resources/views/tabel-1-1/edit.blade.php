@@ -67,7 +67,7 @@ Kerjasama Pendidikan
                             <label for="waktu_durasi" class="col-md-2 col-form-label">Waktu & Durasi</label>
                             <div class="col-md-10">
                                 <div class="input-group">
-                                    <input type="number" class="form-control" name="waktu_dan_durasi" value="{{ $tabel_1_1->waktu_dan_durasi }}" id="waktu_durasi">
+                                    <input type="text" class="form-control" name="waktu_dan_durasi" value="{{ $tabel_1_1->waktu_dan_durasi }}" id="waktu_durasi">
                                     <div class="input-group-text">Tahun</div>
                                 </div>
                             </div>

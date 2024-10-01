@@ -73,13 +73,13 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="{{url('dashboard')}}">
+                            <a class="nav-link" href="{{url('dashboard')}}">
                                 <i class="uil-home-alt me-2"></i> Dashboard
                             </a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_1" role="button">
+                            <a class="nav-link" href="#" id="tabel_1" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 1<div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_1">
@@ -98,7 +98,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_2" role="button">
+                            <a class="nav-link" href="#" id="tabel_2" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 2 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_2">
@@ -114,7 +114,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_3" role="button">
+                            <a class="nav-link" href="#" id="tabel_3" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 3 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu">
@@ -172,7 +172,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_4" role="button">
+                            <a class="nav-link" href="#" id="tabel_4" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 4 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_4">
@@ -185,7 +185,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_5" role="button">
+                            <a class="nav-link" href="#" id="tabel_5" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 5 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_5">
@@ -208,7 +208,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_6" role="button">
+                            <a class="nav-link" href="#" id="tabel_6" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 6 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_6">
@@ -226,7 +226,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_7" role="button">
+                            <a class="nav-link" href="#" id="tabel_7" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 7 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_7">
@@ -239,7 +239,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tabel_8" role="button">
+                            <a class="nav-link" href="#" id="tabel_8" role="button">
                                 <i class="uil-layers me-2"></i>Tabel 8 <div class="arrow-down"></div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="tabel_8">
@@ -357,7 +357,7 @@
                         </li>
 
                         @if (auth()->user()->role == 'admin')
-                        <li class="nav-item dropdown-toggle">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}" id="lain_lain" role="button">
                                 <i class="uil-layers me-2"></i>User
                             </a>

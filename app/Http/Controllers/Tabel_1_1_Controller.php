@@ -99,7 +99,7 @@ class Tabel_1_1_Controller extends Controller
             $tabel11->tingkat = $request->tingkat;
             $tabel11->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
             $tabel11->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
-            $tabel11->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
+            $tabel11->waktu_dan_durasi = $request->waktu_dan_durasi;
             $tabel11->bukti_kerjasama = $document_name;
             $tabel11->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
             $tabel11->save();
@@ -169,7 +169,7 @@ class Tabel_1_1_Controller extends Controller
             $tabel_1_1->tingkat = $request->tingkat;
             $tabel_1_1->judul_kegiatan_kerjasama = $request->judul_kegiatan_kerjasama;
             $tabel_1_1->manfaat_bagi_ps_yang_diakreditasi = $request->manfaat_bagi_ps_yang_diakreditasi;
-            $tabel_1_1->waktu_dan_durasi = $request->waktu_dan_durasi . ' Tahun';
+            $tabel_1_1->waktu_dan_durasi = $request->waktu_dan_durasi;
             $tabel_1_1->bukti_kerjasama = $document_name;
             $tabel_1_1->tahun_berakhirnya_kerjasama = $request->tahun_berakhirnya_kerjasama;
             $tabel_1_1->save();

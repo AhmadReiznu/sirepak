@@ -17,12 +17,19 @@ Kerjasama
     <a href="{{ route('tabel-1-1.create') }}" class="text-white">Tambah</a>
 </button>
 
+@if (session('message'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> {{ session('message') }}.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered dt-responsive nowrap data-table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <table class="table table-striped table-bordered dt-responsive data-table" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead class="bg-primary text-white">
                             <tr>
                                 <th rowspan="2">No</th>

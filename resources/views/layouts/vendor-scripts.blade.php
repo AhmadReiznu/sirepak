@@ -12,5 +12,19 @@
 
 <!-- App js -->
 <script src="{{ URL::asset('/assets/js/app.min.js')}}"></script>
+<script>
+    document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
+        dropdown.addEventListener('mouseover', function() {
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            const rect = dropdownMenu.getBoundingClientRect();
+
+            // Jika dropdown melebihi batas kanan layar
+            if (rect.right > window.innerWidth) {
+                dropdownMenu.style.left = 'auto';
+                dropdownMenu.style.right = '0'; // Geser ke kiri
+            }
+        });
+    });
+</script>
 
 @yield('script-bottom')

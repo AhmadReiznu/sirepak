@@ -1186,6 +1186,9 @@ body[data-layout="horizontal"] .navbar-brand-box {
         right: auto;
     }
     .topnav .dropdown .dropdown-menu {
+        max-height: 400px; /* Batasi tinggi maksimum dropdown */
+        overflow-y: auto; /* Tambahkan scrollbar vertikal jika item melebihi tinggi */
+        overflow-x: hidden; /* Hindari scrollbar horizontal */
         margin-top: 0;
         border-radius: 0 0 0.25rem 0.25rem;
     }
@@ -4188,16 +4191,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .chat-conversation .conversation-list .conversation-name {
     margin-bottom: 4px;
 }
-.chat-conversation .conversation-list .dropdown .dropdown-toggle {
-    font-size: 18px;
-    padding: 4px;
-    color: var(--bs-gray-600);
-}
-@media (max-width: 575.98px) {
-    .chat-conversation .conversation-list .dropdown .dropdown-toggle {
-        display: none;
-    }
-}
+
 .chat-conversation .conversation-list .chat-time {
     font-size: 12px;
     margin-top: 4px;
